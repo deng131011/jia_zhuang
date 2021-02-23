@@ -1,0 +1,2785 @@
+---------------------------------------------------------------
+[ 2021-02-21T10:29:17+08:00 ] 192.168.31.114 GET 192.168.31.114:805/
+[运行时间：0.274016s] [吞吐率：3.65req/s] [内存消耗：3,010.58kb] [文件加载：74]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.050003s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.136008s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\www\jia_zhuang\apps\home\controller\Index.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/home/view/index/index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_themes` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `qyc_config` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT `id` FROM `qyc_hooks` WHERE  `name` = 'FormBuilderExtend' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks_extra` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT `depend_flag` FROM `qyc_hooks_extra` WHERE  `hook_id` = 2  AND `depend_type` = 2 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:29:17+08:00 ] 192.168.31.114 GET 192.168.31.114:805/favicon.ico
+[运行时间：0.116007s] [吞吐率：8.62req/s] [内存消耗：2,615.95kb] [文件加载：64]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.037002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:29:21+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php?s=/admin/login/index
+[运行时间：0.161009s] [吞吐率：6.21req/s] [内存消耗：3,176.86kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.036002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\jia_zhuang\apps\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\login\index.html [ array (
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.033002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'login_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:29:21+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/login/verify_img.html
+[运行时间：0.153008s] [吞吐率：6.54req/s] [内存消耗：3,010.60kb] [文件加载：76]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.037002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify_img',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php?s=/admin/login/index',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.035002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\admin\controller\Login->verify_img[ D:\www\jia_zhuang\apps\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.028001s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'login_verify_img'  AND `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:30:00+08:00 ] 192.168.31.114 POST 192.168.31.114:805/admin.php/admin/login/index.html
+[运行时间：0.241014s] [吞吐率：4.15req/s] [内存消耗：3,108.28kb] [文件加载：85]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.036002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php?s=/admin/login/index',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://192.168.31.114:805',
+  'accept' => '*/*',
+  'content-length' => '56',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'captcha' => '0082',
+  'rememberme' => '0',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.031002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\jia_zhuang\apps\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.060003s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_admin` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `qyc_admin` WHERE  ( `username` = 'admin' OR `email` = 'admin' OR `mobile` = 'admin' )  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_admin` WHERE  ( `username` = 'admin' OR `email` = 'admin' OR `mobile` = 'admin' OR `nickname` = 'admin' )  AND `status` = 1 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_auth_group_access` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `a`.`group_id`,`b`.`title` FROM `qyc_auth_group_access` `a` INNER JOIN `qyc_auth_group` `b` ON `a`.`group_id`=`b`.`id` WHERE  `a`.`uid` = 1  AND `a`.`status` = 1 [ RunTime:0.002000s ]
+[ sql ] [ SQL ] UPDATE `qyc_admin`  SET `last_login_ip`='192.168.31.114',`last_login_time`='2021-02-21 10:30:00',`activation_auth_sign`='582f8ac4e9aa2ab60ede87dba268da7649bd65ba'  WHERE  `uid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'login_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `username` FROM `qyc_admin` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action_log` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] INSERT INTO `qyc_action_log` (`action_id` , `uid` , `is_admin` , `nickname` , `request_method` , `url` , `data` , `ip` , `remark` , `user_agent` , `create_time`) VALUES (1 , 1 , 1 , 'admin' , 'POST' , '/admin.php/admin/login/index.html' , '{\"param\":[]}' , '192.168.31.114' , '登录后台' , 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36' , '2021-02-21 10:30:00') [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:30:01+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/index/index.html
+[运行时间：1.304075s] [吞吐率：0.77req/s] [内存消耗：3,090.16kb] [文件加载：81]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.036002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php?s=/admin/login/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.035002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\www\jia_zhuang\apps\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\index\index.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'meta_title',
+  10 => 'current_message_count',
+  11 => 'accredit_status',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.025001s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'index_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:30:02+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/dashboard/index.html
+[运行时间：0.176010s] [吞吐率：5.68req/s] [内存消耗：3,057.80kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.041002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'dashboard',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.032002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Dashboard->index[ D:\www\jia_zhuang\apps\admin\controller\Dashboard.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.026002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'dashboard_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:30:02+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/product/index.html
+[运行时间：0.429025s] [吞吐率：2.33req/s] [内存消耗：3,406.63kb] [文件加载：90]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.035002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.030002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Product->index[ D:\www\jia_zhuang\apps\admin\controller\Product.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\product\index.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'typelist',
+  10 => 'get',
+  11 => 'list',
+  12 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.025002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_producttype` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_producttype` WHERE  `pid` = 1  AND `status` = 1 ORDER BY `sort` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_product` WHERE  `status` > -1 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_product` WHERE  `status` > -1 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_attachment` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_attachment` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_users` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_users` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_admin` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_admin` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_auth_group_access` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT `a`.`group_id`,`b`.`title` FROM `qyc_auth_group_access` `a` INNER JOIN `qyc_auth_group` `b` ON `a`.`group_id`=`b`.`id` WHERE  `a`.`uid` = 1  AND `a`.`status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_term_relationships` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `term_id` FROM `qyc_term_relationships` WHERE  `object_id` = 1  AND `table` = 'attachment' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_terms` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `term_id` FROM `qyc_terms` WHERE  `term_id` IS NULL LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_product_guige` WHERE  `product_id` = 6 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_attachment` WHERE  `id` = 29 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_product_guige` WHERE  `product_id` = 5 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 15 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_attachment` WHERE  `id` = 28 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_product_guige` WHERE  `product_id` = 4 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 15 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_attachment` WHERE  `id` = 27 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_product_guige` WHERE  `product_id` = 3 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_attachment` WHERE  `id` = 27 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_product_guige` WHERE  `product_id` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 12 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_attachment` WHERE  `id` = 27 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_product_guige` WHERE  `product_id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title` FROM `qyc_producttype` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'product_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:30:03+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/index/setHeaderModulesMenus
+[运行时间：0.182011s] [吞吐率：5.49req/s] [内存消耗：3,066.53kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.037002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'setHeaderModulesMenus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.034002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Index->setHeaderModulesMenus[ D:\www\jia_zhuang\apps\admin\controller\Index.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.029002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `title`,`name`,`icon`,`sort` FROM `qyc_modules` WHERE  `status` = 1 ORDER BY `sort` ASC [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'index_setheadermodulesmenus'  AND `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:30:03+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/index/getTopMenus
+[运行时间：0.196011s] [吞吐率：5.10req/s] [内存消耗：3,078.44kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.042003s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getTopMenus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.032002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Index->getTopMenus[ D:\www\jia_zhuang\apps\admin\controller\Index.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.031002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.032002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.029002s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'index_gettopmenus'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:30:03+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/index/getSidebarMenus
+[运行时间：0.222013s] [吞吐率：4.50req/s] [内存消耗：3,083.14kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.045003s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'getSidebarMenus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.037002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Index->getSidebarMenus[ D:\www\jia_zhuang\apps\admin\controller\Index.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.026002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.030002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.029002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_auth_rule` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`title`,`depend_type`,`depend_flag`,`type`,`pid`,`icon`,`condition`,`is_menu`,`position`,`developer`,`sort`,`update_time`,`create_time`,`status` FROM `qyc_auth_rule` WHERE  `status` = 1  AND `is_menu` = 1  AND `position` = 'Content' ORDER BY `sort` ASC [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'index_getsidebarmenus'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:35:55+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.137008s] [吞吐率：7.30req/s] [内存消耗：3,016.34kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.032002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '292',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.026002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:35:55+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.117007s] [吞吐率：8.55req/s] [内存消耗：3,016.27kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.029001s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '263',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.025002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.016000s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:35:56+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.117007s] [吞吐率：8.55req/s] [内存消耗：3,012.73kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.028002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '78',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.024001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002001s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:35:56+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.120007s] [吞吐率：8.33req/s] [内存消耗：3,016.30kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.031002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '279',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.026002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:35:57+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.117006s] [吞吐率：8.55req/s] [内存消耗：3,012.61kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.029002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '37',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.023001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:35:57+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.113007s] [吞吐率：8.85req/s] [内存消耗：3,012.66kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.028002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '58',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.024001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001001s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:35:59+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.116007s] [吞吐率：8.62req/s] [内存消耗：3,012.53kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.028002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '9',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.024001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:42:20+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.155008s] [吞吐率：6.45req/s] [内存消耗：3,010.72kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.034002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '9',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.027001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`c`.`spec_id`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:46:42+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.165009s] [吞吐率：6.06req/s] [内存消耗：3,024.58kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.030002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '9',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.026001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`c`.`spec_id`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:47:05+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.159009s] [吞吐率：6.29req/s] [内存消耗：3,024.58kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.030002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '9',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.025001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002001s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`c`.`spec_id`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T10:47:51+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Car/car_list
+[运行时间：0.156009s] [吞吐率：6.41req/s] [内存消耗：3,024.58kb] [文件加载：75]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.029002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Car',
+    2 => 'car_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '9',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.025001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001001s ]
+[ info ] [ RUN ] app\app\controller\Car->car_list[ D:\www\jia_zhuang\apps\app\controller\Car.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_car` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT c.id as car_id,`c`.`num`,`c`.`spec_id`,`p`.*,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price` FROM qyc_car c INNER JOIN `qyc_product` `p` ON `p`.`id`=`c`.`product_id` INNER JOIN `qyc_product_guige` `g` ON `g`.`id`=`c`.`main_gg_id` WHERE  `c`.`uid` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T11:06:17+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/index.html
+[运行时间：0.230013s] [吞吐率：4.35req/s] [内存消耗：3,338.91kb] [文件加载：87]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.042002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002001s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->index[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\index.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'get',
+  13 => 'list',
+  14 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.027002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_coupon` `b` WHERE  `status` > -1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` `b` WHERE  `status` > -1 ORDER BY `b`.`id` DESC LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T11:06:20+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/edit.html
+[运行时间：0.200012s] [吞吐率：5.00req/s] [内存消耗：3,253.01kb] [文件加载：84]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.036002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/coupon/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.031002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->edit[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\edit.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'info',
+  13 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.027001s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_edit'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T13:49:21+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/index.html
+[运行时间：1.360078s] [吞吐率：0.74req/s] [内存消耗：3,213.04kb] [文件加载：86]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.042002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.071004s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->index[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\index.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'get',
+  13 => 'list',
+  14 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.019002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `qyc_config` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `id` FROM `qyc_hooks` WHERE  `name` = 'FormBuilderExtend' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks_extra` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `depend_flag` FROM `qyc_hooks_extra` WHERE  `hook_id` = 2  AND `depend_type` = 2 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_coupon` `b` WHERE  `status` > -1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` `b` WHERE  `status` > -1 ORDER BY `b`.`id` DESC LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T13:49:24+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/edit.html
+[运行时间：0.160009s] [吞吐率：6.25req/s] [内存消耗：3,106.05kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.030002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/coupon/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.025001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->edit[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\edit.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'info',
+  13 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.020002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_edit'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T13:49:28+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/index.html
+[运行时间：0.163010s] [吞吐率：6.13req/s] [内存消耗：3,182.02kb] [文件加载：85]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.029002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.026001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->index[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\index.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'get',
+  13 => 'list',
+  14 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.020002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_coupon` `b` WHERE  `status` > -1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` `b` WHERE  `status` > -1 ORDER BY `b`.`id` DESC LIMIT 0,20 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T13:49:32+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/edit.html
+[运行时间：0.159009s] [吞吐率：6.29req/s] [内存消耗：3,106.05kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.030001s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/coupon/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.025002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->edit[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\edit.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'info',
+  13 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.019001s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_edit'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T13:52:16+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/edit.html
+[运行时间：0.178011s] [吞吐率：5.62req/s] [内存消耗：3,106.11kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.039002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/coupon/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.025001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->edit[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\edit.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'info',
+  13 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.020001s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_edit'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T13:53:05+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/edit.html
+[运行时间：0.160009s] [吞吐率：6.25req/s] [内存消耗：3,106.11kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.029002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/coupon/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.025001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->edit[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\edit.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'info',
+  13 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.019001s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.018002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_edit'  AND `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T13:53:07+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/edit.html
+[运行时间：0.172010s] [吞吐率：5.81req/s] [内存消耗：3,106.11kb] [文件加载：82]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.040003s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/coupon/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.024001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->edit[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\edit.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'info',
+  13 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.020002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.018002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_edit'  AND `status` = 1 LIMIT 1 [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2021-02-21T13:54:25+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/coupon/edit.html
+[运行时间：0.175010s] [吞吐率：5.71req/s] [内存消耗：3,252.19kb] [文件加载：84]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.030002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'coupon',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/coupon/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.026002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Coupon->edit[ D:\www\jia_zhuang\apps\admin\controller\Coupon.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\coupon\edit.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'type',
+  10 => 'get_type',
+  11 => 'area_type',
+  12 => 'info',
+  13 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.019001s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_coupon` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.017001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'coupon_edit'  AND `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T14:31:52+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Coupon/my_coupon
+[运行时间：0.183011s] [吞吐率：5.46req/s] [内存消耗：2,900.92kb] [文件加载：72]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.042002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Coupon',
+    2 => 'my_coupon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '18',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.062003s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Coupon->my_coupon[ D:\www\jia_zhuang\apps\app\controller\Coupon.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_themes` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 2 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.029002s ]
+[ sql ] [ SQL ] SELECT `c`.* FROM qyc_coupon c INNER JOIN `qyc_coupon_recode` `r` ON `r`.`coupon_id`=`c`.`id` WHERE  `r`.`is_use` = 0  AND `r`.`end_time` > 1613889111  AND `r`.`uid` = 1  AND `r`.`user_status` = 1 ORDER BY `r`.`id` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T14:32:06+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Coupon/my_coupon
+[运行时间：0.144009s] [吞吐率：6.94req/s] [内存消耗：2,895.26kb] [文件加载：72]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.039003s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Coupon',
+    2 => 'my_coupon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '18',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Coupon->my_coupon[ D:\www\jia_zhuang\apps\app\controller\Coupon.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `c`.* FROM qyc_coupon c INNER JOIN `qyc_coupon_recode` `r` ON `r`.`coupon_id`=`c`.`id` WHERE  `r`.`is_use` = 1  AND `r`.`uid` = 1  AND `r`.`user_status` = 1 ORDER BY `r`.`id` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T14:32:09+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Coupon/my_coupon
+[运行时间：0.141009s] [吞吐率：7.09req/s] [内存消耗：2,895.48kb] [文件加载：72]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.037002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Coupon',
+    2 => 'my_coupon',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '18',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Coupon->my_coupon[ D:\www\jia_zhuang\apps\app\controller\Coupon.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `c`.* FROM qyc_coupon c INNER JOIN `qyc_coupon_recode` `r` ON `r`.`coupon_id`=`c`.`id` WHERE  `r`.`is_use` = 0  AND `r`.`end_time` <= 1613889129  AND `r`.`uid` = 1  AND `r`.`user_status` = 1 ORDER BY `r`.`id` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T15:58:11+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Order/order_info
+[运行时间：0.562032s] [吞吐率：1.78req/s] [内存消耗：3,216.03kb] [文件加载：80]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.042002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Order',
+    2 => 'order_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '121',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.126007s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Order->order_info[ D:\www\jia_zhuang\apps\app\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_themes` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `qyc_config` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `id` FROM `qyc_hooks` WHERE  `name` = 'FormBuilderExtend' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks_extra` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT `depend_flag` FROM `qyc_hooks_extra` WHERE  `hook_id` = 2  AND `depend_type` = 2 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT `p`.*,p.id as product_id,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price`,g.icon as gg_icon FROM qyc_product p INNER JOIN `qyc_product_guige` `g` ON `p`.`id`=`g`.`product_id` WHERE  `g`.`id` = 1  AND `p`.`id` = 6  AND `p`.`status` = 1 LIMIT 1  FOR UPDATE [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_attachment` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_attachment` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_users` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_users` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_admin` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_admin` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_auth_group_access` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `a`.`group_id`,`b`.`title` FROM `qyc_auth_group_access` `a` INNER JOIN `qyc_auth_group` `b` ON `a`.`group_id`=`b`.`id` WHERE  `a`.`uid` = 1  AND `a`.`status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_term_relationships` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `term_id` FROM `qyc_term_relationships` WHERE  `object_id` = 1  AND `table` = 'attachment' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_terms` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `term_id` FROM `qyc_terms` WHERE  `term_id` IS NULL LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_address` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_address` WHERE  `uid` = 1  AND `is_default` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.039002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2236 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2237 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2245 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `c`.*,r.id as recode_id FROM qyc_coupon c INNER JOIN `qyc_coupon_recode` `r` ON `r`.`coupon_id`=`c`.`id` WHERE  `c`.`status` = 1  AND `c`.`area_type` = 1  AND `r`.`end_time` > 1613894291  AND `r`.`uid` = 1  AND `r`.`is_use` = 0  AND `r`.`user_status` = 1 ORDER BY `r`.`id` DESC [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T15:58:58+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Order/order_info
+[运行时间：0.194011s] [吞吐率：5.15req/s] [内存消耗：2,953.12kb] [文件加载：73]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.036002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Order',
+    2 => 'order_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '121',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.032002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Order->order_info[ D:\www\jia_zhuang\apps\app\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `p`.*,p.id as product_id,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price`,g.icon as gg_icon FROM qyc_product p INNER JOIN `qyc_product_guige` `g` ON `p`.`id`=`g`.`product_id` WHERE  `g`.`id` = 1  AND `p`.`id` = 6  AND `p`.`status` = 1 LIMIT 1  FOR UPDATE [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `id`,`gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T15:59:09+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Order/order_info
+[运行时间：0.198012s] [吞吐率：5.05req/s] [内存消耗：2,952.65kb] [文件加载：73]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.037002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Order',
+    2 => 'order_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '121',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Order->order_info[ D:\www\jia_zhuang\apps\app\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `p`.*,p.id as product_id,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price`,g.icon as gg_icon FROM qyc_product p INNER JOIN `qyc_product_guige` `g` ON `p`.`id`=`g`.`product_id` WHERE  `g`.`id` = 1  AND `p`.`id` = 6  AND `p`.`status` = 1 LIMIT 1  FOR UPDATE [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T15:59:33+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Order/order_info
+[运行时间：0.195011s] [吞吐率：5.13req/s] [内存消耗：2,954.99kb] [文件加载：73]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.036002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Order',
+    2 => 'order_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '121',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Order->order_info[ D:\www\jia_zhuang\apps\app\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `p`.*,p.id as product_id,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price`,g.icon as gg_icon FROM qyc_product p INNER JOIN `qyc_product_guige` `g` ON `p`.`id`=`g`.`product_id` WHERE  `g`.`id` = 1  AND `p`.`id` = 6  AND `p`.`status` = 1 LIMIT 1  FOR UPDATE [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `id`,`gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `id`,`gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T15:59:44+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Order/order_info
+[运行时间：0.293016s] [吞吐率：3.41req/s] [内存消耗：3,080.04kb] [文件加载：76]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.046003s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Order',
+    2 => 'order_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '121',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Order->order_info[ D:\www\jia_zhuang\apps\app\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `p`.*,p.id as product_id,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price`,g.icon as gg_icon FROM qyc_product p INNER JOIN `qyc_product_guige` `g` ON `p`.`id`=`g`.`product_id` WHERE  `g`.`id` = 1  AND `p`.`id` = 6  AND `p`.`status` = 1 LIMIT 1  FOR UPDATE [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_address` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_address` WHERE  `uid` = 1  AND `is_default` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2236 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2237 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2245 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.027001s ]
+[ sql ] [ SQL ] SELECT `c`.*,r.id as recode_id FROM qyc_coupon c INNER JOIN `qyc_coupon_recode` `r` ON `r`.`coupon_id`=`c`.`id` WHERE  `c`.`status` = 1  AND `c`.`area_type` = 1  AND `r`.`end_time` > 1613894384  AND `r`.`uid` = 1  AND `r`.`is_use` = 0  AND `r`.`user_status` = 1 ORDER BY `r`.`id` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T16:00:13+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Order/order_info
+[运行时间：0.290017s] [吞吐率：3.45req/s] [内存消耗：3,080.04kb] [文件加载：76]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.037002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Order',
+    2 => 'order_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '121',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Order->order_info[ D:\www\jia_zhuang\apps\app\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `p`.*,p.id as product_id,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price`,g.icon as gg_icon FROM qyc_product p INNER JOIN `qyc_product_guige` `g` ON `p`.`id`=`g`.`product_id` WHERE  `g`.`id` = 1  AND `p`.`id` = 6  AND `p`.`status` = 1 LIMIT 1  FOR UPDATE [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_address` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_address` WHERE  `uid` = 1  AND `is_default` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.028002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2236 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2237 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2245 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT `c`.*,r.id as recode_id FROM qyc_coupon c INNER JOIN `qyc_coupon_recode` `r` ON `r`.`coupon_id`=`c`.`id` WHERE  `c`.`status` = 1  AND `c`.`area_type` = 1  AND `r`.`end_time` > 1613894413  AND `r`.`uid` = 1  AND `r`.`is_use` = 0  AND `r`.`user_status` = 1 ORDER BY `r`.`id` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T16:02:10+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Order/order_info
+[运行时间：0.273016s] [吞吐率：3.66req/s] [内存消耗：3,080.16kb] [文件加载：76]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.036002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Order',
+    2 => 'order_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '121',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Order->order_info[ D:\www\jia_zhuang\apps\app\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `p`.*,p.id as product_id,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price`,g.icon as gg_icon FROM qyc_product p INNER JOIN `qyc_product_guige` `g` ON `p`.`id`=`g`.`product_id` WHERE  `g`.`id` = 1  AND `p`.`id` = 6  AND `p`.`status` = 1 LIMIT 1  FOR UPDATE [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_address` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_address` WHERE  `uid` = 1  AND `is_default` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2236 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2237 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2245 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `c`.*,r.id as recode_id FROM qyc_coupon c INNER JOIN `qyc_coupon_recode` `r` ON `r`.`coupon_id`=`c`.`id` WHERE  `c`.`status` = 1  AND `c`.`area_type` = 1  AND `r`.`end_time` > 1613894530  AND `r`.`uid` = 1  AND `r`.`is_use` = 0  AND `r`.`user_status` = 1 ORDER BY `r`.`id` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T16:08:10+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Order/order_info
+[运行时间：0.298017s] [吞吐率：3.36req/s] [内存消耗：3,081.68kb] [文件加载：76]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.043003s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Order',
+    2 => 'order_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '121',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.036002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Order->order_info[ D:\www\jia_zhuang\apps\app\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `p`.*,p.id as product_id,`g`.`new_price`,`g`.`bigdl_price`,`g`.`dls_price`,g.icon as gg_icon FROM qyc_product p INNER JOIN `qyc_product_guige` `g` ON `p`.`id`=`g`.`product_id` WHERE  `g`.`id` = 1  AND `p`.`id` = 6  AND `p`.`status` = 1 LIMIT 1  FOR UPDATE [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_product_guige` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`gg_title` FROM `qyc_product_guige` WHERE  `product_id` = 6  AND `id` IN (1,3) [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_address` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_address` WHERE  `uid` = 1  AND `is_default` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2236 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2237 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2245 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `level` = 2  AND `id` = 2237 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_coupon` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `c`.*,r.id as recode_id FROM qyc_coupon c INNER JOIN `qyc_coupon_recode` `r` ON `r`.`coupon_id`=`c`.`id` WHERE  `c`.`status` = 1  AND `c`.`area_type` = 1  AND `r`.`end_time` > 1613894890  AND `r`.`uid` = 1  AND `r`.`is_use` = 0  AND `r`.`user_status` = 1 ORDER BY `r`.`id` DESC [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T17:06:08+08:00 ] 192.168.31.114 POST 192.168.31.114:805/app/Order/get_send_price
+[运行时间：0.246014s] [吞吐率：4.06req/s] [内存消耗：2,979.09kb] [文件加载：74]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.043002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Order',
+    2 => 'get_send_price',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '103',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.125007s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Order->get_send_price[ D:\www\jia_zhuang\apps\app\controller\Order.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_themes` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `qyc_config` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT `id` FROM `qyc_hooks` WHERE  `name` = 'FormBuilderExtend' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks_extra` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `depend_flag` FROM `qyc_hooks_extra` WHERE  `hook_id` = 2  AND `depend_type` = 2 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `level` = 2  AND `id` = 2236 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T17:06:50+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/china/index.html
+[运行时间：2.339134s] [吞吐率：0.43req/s] [内存消耗：3,395.65kb] [文件加载：87]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.037002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'china',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.032002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\China->index[ D:\www\jia_zhuang\apps\admin\controller\China.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\china\index.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'get',
+  10 => 'list',
+  11 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.028002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_china` WHERE  `pid` = 0  AND `level` IN (1,2,3)  AND `status` > -1 LIMIT 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `pid` = 0  AND `level` IN (1,2,3)  AND `status` > -1 ORDER BY `id` ASC LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'china_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T17:06:59+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/china/index/pid/1.html
+[运行时间：0.204011s] [吞吐率：4.90req/s] [内存消耗：3,174.33kb] [文件加载：85]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.037002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'china',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/china/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '1',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.031002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\China->index[ D:\www\jia_zhuang\apps\admin\controller\China.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\china\index.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'get',
+  10 => 'list',
+  11 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.028001s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_china` WHERE  `pid` = 1  AND `level` IN (1,2,3)  AND `status` > -1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `pid` = 1  AND `level` IN (1,2,3)  AND `status` > -1 ORDER BY `id` ASC LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'china_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T17:07:00+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/china/edit/id/2.html
+[运行时间：0.205012s] [吞吐率：4.88req/s] [内存消耗：3,241.68kb] [文件加载：84]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.037002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'china',
+    2 => 'edit',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/china/index/pid/1.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.032002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\China->edit[ D:\www\jia_zhuang\apps\admin\controller\China.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\china\edit.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'info',
+  10 => 'meta_title',
+  11 => 'get',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.027002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'china_edit'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T17:07:04+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/china/index/pid/1.html
+[运行时间：0.201011s] [吞吐率：4.97req/s] [内存消耗：3,174.33kb] [文件加载：85]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.036002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'china',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/china/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+  'pid' => '1',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.031002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\China->index[ D:\www\jia_zhuang\apps\admin\controller\China.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps/admin\view\china\index.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'get',
+  10 => 'list',
+  11 => 'meta_title',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.027002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_china` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_china` WHERE  `pid` = 1  AND `level` IN (1,2,3)  AND `status` > -1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `qyc_china` WHERE  `pid` = 1  AND `level` IN (1,2,3)  AND `status` > -1 ORDER BY `id` ASC LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.024001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'china_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-21T17:07:13+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/fankui/index.html
+[运行时间：0.183010s] [吞吐率：5.46req/s] [内存消耗：3,128.45kb] [文件加载：86]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.038002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'fankui',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.032001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Fankui->index[ D:\www\jia_zhuang\apps\admin\controller\Fankui.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_fankui` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_fankui` `f` LEFT JOIN `qyc_usermember` `u` ON `f`.`uid`=`u`.`id` WHERE  `f`.`status` > -1 LIMIT 1 [ RunTime:0.001001s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.username' in 'field list'[D:\www\jia_zhuang\thinkphp\library\think\db\Connection.php:385]
+---------------------------------------------------------------
+[ 2021-02-21T17:07:14+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/fastdi/index.html
+[运行时间：0.232013s] [吞吐率：4.31req/s] [内存消耗：3,413.78kb] [文件加载：88]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.047002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'fastdi',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.033001s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002001s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Fastdi->index[ D:\www\jia_zhuang\apps\admin\controller\Fastdi.php ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps//common/view/builder/listbuilder.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'top_button_list',
+  10 => 'action_url',
+  11 => 'search',
+  12 => 'tab_nav',
+  13 => 'table_columns',
+  14 => 'table_column_fields',
+  15 => 'table_primary_key',
+  16 => 'table_data_page',
+  17 => 'extra_html',
+  18 => 'staticFiles',
+  19 => 'template_path_str',
+  20 => '_builder_style_',
+  21 => '_builder_javascript_',
+  22 => 'show_box_header',
+  23 => 'meta_title',
+  24 => 'tips',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.029002s ]
+[ info ] [ VIEW ] D:\www\jia_zhuang\public_html/../apps//common/view/layout/iframe/content.html [ array (
+  0 => 'eacoo_version',
+  1 => 'url_model',
+  2 => 'msgcount',
+  3 => 'current_user',
+  4 => 'is_menu_collected',
+  5 => '_admin_document_header_',
+  6 => '_admin_public_left_',
+  7 => '_admin_public_base_',
+  8 => '_admin_public_layerbase_',
+  9 => 'top_button_list',
+  10 => 'action_url',
+  11 => 'search',
+  12 => 'tab_nav',
+  13 => 'table_columns',
+  14 => 'table_column_fields',
+  15 => 'table_primary_key',
+  16 => 'table_data_page',
+  17 => 'extra_html',
+  18 => 'staticFiles',
+  19 => 'template_path_str',
+  20 => '_builder_style_',
+  21 => '_builder_javascript_',
+  22 => 'show_box_header',
+  23 => 'meta_title',
+  24 => 'tips',
+  25 => 'content',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_logistics_company` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`code`,`sort`,`status`,`create_time`,`update_time` FROM `qyc_logistics_company` ORDER BY `create_time` DESC LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_logistics_company` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'fastdi_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-21T17:07:14+08:00 ] 192.168.31.114 GET 192.168.31.114:805/admin.php/admin/fastdi/index.html?paged=1&page_size=20&_=1613898434528
+[运行时间：0.221013s] [吞吐率：4.52req/s] [内存消耗：3,193.51kb] [文件加载：85]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.038002s ]
+[ info ] [ LANG ] D:\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'fastdi',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=v8s00h72a56i2h37hbj5uprpb3',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.31.114:805/admin.php/admin/fastdi/index.html',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => '192.168.31.114:805',
+)
+[ info ] [ PARAM ] array (
+  'paged' => '1',
+  'page_size' => '20',
+  '_' => '1613898434528',
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.037003s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ SESSION ] INIT array (
+  'type' => '',
+  'prefix' => 'eacoophp_',
+  'auto_start' => '1',
+)
+[ info ] [ RUN ] app\admin\controller\Fastdi->index[ D:\www\jia_zhuang\apps\admin\controller\Fastdi.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\Log @app_end [ RunTime:0.032002s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.030002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_message` [ RunTime:0.025001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_message` WHERE  `uid` = 0  AND `is_see` = 0 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_logistics_company` [ RunTime:0.025002s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`code`,`sort`,`status`,`create_time`,`update_time` FROM `qyc_logistics_company` ORDER BY `create_time` DESC LIMIT 0,20 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `qyc_logistics_company` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_action` [ RunTime:0.029002s ]
+[ sql ] [ SQL ] SELECT `id`,`title`,`action_type` FROM `qyc_action` WHERE  `depend_type` = 1  AND `depend_flag` = 'admin'  AND `name` = 'fastdi_index'  AND `status` = 1 LIMIT 1 [ RunTime:0.001000s ]

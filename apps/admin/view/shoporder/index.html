@@ -1,0 +1,166 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/libs/bootstrap-table/bootstrap-table.min.css">
+
+<!----- 搜索 ----->
+<section class="row-content pt-5">
+    <div class="box box-default">
+        <div class="box-header with-border pb-0">
+            <h3 class="box-title">高级查询</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <form id="search_form" action="{:url('')}" method="get">
+        <div class="box-body" id="eacoo-toolbar">
+            <div class="form-inline" role="form">
+                <div class="form-group mt-10">
+                    <select name="hexiao_status" class="form-control">
+                        <option value="">选择核销状态 </option>
+                        <option value="dzf" <?php if(!empty($get['hexiao_status']) && $get['hexiao_status']=='dzf'){echo 'selected';} ?>> 未核销</option>
+                        <option value="yzf" <?php if(!empty($get['hexiao_status']) && $get['hexiao_status']=='yzf'){echo 'selected';} ?>>已核销 </option>
+                    </select>
+                </div>
+
+
+                <div class="form-group mt-10">
+                    <input type="text" id="dates" class="form-control" name="dates" value="{$get['dates']|default=''}" placeholder="时间区间查询" readonly />
+                    <input type="text" class="form-control" name="keywords" value="{$get['keywords']|default=''}" placeholder="核销码、电话">
+                </div>
+                <input type="hidden" name="excel" id="excel" value="" />
+                <div class="form-group mt-10">
+                    <button type="button" class="btn btn-success search-btn" id="search">查询</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</section>
+
+<section class="content pt-5">
+        <div class="box-body" style="background: #fff;">
+            <div class="builder listbuilder-box">
+                <!-- 顶部工具栏按钮 -->
+                <!-- 数据列表 -->
+                <div class="builder-container">
+                    <div class="row">
+
+                        <div class="builder-table col-sm-12">
+                        <div class="bootstrap-table">
+                                <div class="fixed-table-toolbar"><div class="bs-bars pull-left">
+                                    <div id="builder-toolbar" class="toolbar">
+                                    <!-- 工具栏按钮 -->
+                                    <!--<div class="form-group">-->
+                                   <!-- <a title="删除" target-form="ids" icon="fa fa-play" class="btn btn-danger ajax-table-btn confirm btn-sm" href="{:url('delOrder')}" data-my="1" primary-key="id"><i class="fa fa-play"></i> 删除</a>&nbsp;-->
+                                     <a target-form="ids" icon="fa fa-play" class="btn btn-warning btn-sm btn_excel"><i class="fa fa-play"></i> 导出EXCEL</a>
+                                    <!-- </div>-->
+                                    </div>
+                                </div>
+
+                                <div class="fixed-table-container fixed_table_list" style="padding-bottom: 0px;">
+                                    <div class="fixed-table-header" ></div>
+                                    <table id="builder-table" class="table table-responsive table-bordered table-hover dataTable" data-pagination="true" data-toolbar="#builder-toolbar" data-query-params="queryParams" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <!--<th class="bs-checkbox checkbox-toggle" style="width: 36px;" data-field="state">
+                                                <input name="btSelectAll" type="checkbox" >
+                                                <div class="fht-cell"></div>
+                                            </th>-->
+                                            <th style="" >
+                                                <div class="th-inner sortable both">ID</div>
+                                            </th>
+                                            <th style="width:10%" >
+                                                <div class="th-inner sortable both">核销码</div>
+                                            </th>
+                                            <th style="">
+                                                <div class="th-inner sortable both">下单用户</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">用户电话</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">预约时间</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">实际支付</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">下单时间</div>
+                                            </th>
+
+                                            <th style="" data-field="status">
+                                                <div class="th-inner sortable both">订单状态</div>
+                                            </th>
+                                            <th style="" data-field="right_button">
+                                                <div class="th-inner sortable both">操作</div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name="list" id="vo"}
+                                        <tr data-index="{$key}" data-uniqueid="{$vo['id']}">
+                                          <!--  <td class="bs-checkbox">
+                                                <input data-index="{$key}" name="ids[]" type="checkbox" value="{$vo['id']}">
+                                            </td>-->
+                                            <td style="">{$vo['id']}</td>
+                                            <td style="">{$vo['hexiao_code']}</td>
+                                            <td style="">{$vo['order_user']|default=$vo['username']}</td>
+                                            <td style="">{$vo['order_mobile']|default=$vo['mobile']}</td>
+                                            <td style="">{$vo['order_date']|default=''}</td>
+                                            <td style="">￥{$vo['pay_price']|default=''}</td>
+                                            <td style="">{$vo['create_time']|mydate=2}</td>
+
+                                            <td style="">{$vo['orderstatus']['msg']}</td>
+                                            <td style="">
+                                                <a class="btn btn-success btn-xs" href="{:url('details',array('order_id'=>$vo['id']))}">详情</a>
+
+                                                {if condition="$vo['hexiao_status'] lt 1"}
+                                                <a title="删除" icon="fa fa-remove" class="btn btn-danger btn-xs ajax-get confirm" confirm-info="您确定要执行删除操作吗？" href="{:url('setstatus',array('status'=>'delete','ids'=>$vo['id']))}" style="margin-right:6px;"><i class="fa fa-remove"></i> </a>
+                                                {/if}
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="fixed-table-pagination" style="display: block;">
+                                    <div class="pull-left pagination-detail">
+                                        <span class="pagination-info">总共 {$list->total()} 条记录</span>
+                                    </div>
+                                    <div class="pull-right pagination">
+                                        {$list->render()}
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="/static/home/layui/css/layui.css">
+<script src="/static/home/layui/layui.all.js" charset="utf-8"></script>
+<script>
+    var $table = $('#builder-table');
+
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //国际版
+        laydate.render({
+            elem: '#dates'
+            ,range: '/'
+        });
+    });
+
+
+
+
+
+</script>
+
+{/block}

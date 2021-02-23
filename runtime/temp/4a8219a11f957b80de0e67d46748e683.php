@@ -1,0 +1,2 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:48:"../apps/common/view/builder/Fields/textarea.html";i:1556705925;}*/ ?>
+<textarea name="<?php echo $field['name']; ?>" class="form-control" length="120" rows='5' <?php echo (isset($field['extra_attr']) && ($field['extra_attr'] !== '')?$field['extra_attr']:''); ?>><?php if(isset($field['value'])): ?><?php echo htmlspecialchars($field['value']); endif; ?></textarea>

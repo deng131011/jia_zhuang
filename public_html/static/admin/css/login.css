@@ -1,0 +1,6 @@
+.login-box, .register-box{width:360px;}
+.login-logo a{color:#e0e0e0;}
+.form-control{height: 46px;}
+.form-control-feedback{line-height: 47px;}
+.verify{cursor:pointer;}
+.login_btn{height: 46px;border-radius: 5px !important;}

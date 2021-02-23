@@ -1,0 +1,162 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}
+
+<style>
+    .headimg{width:50px; height: 50px; border-radius: 50%;}
+    .username{margin:0 20px;}
+    .imgarr_list{width:100px; height:100px;}
+    .text_color{color: #555;}
+    .video{float: left; width:100px; height:100px; margin-right:10px;}
+    .reply_list{border-top:1px solid #eee; margin-top:30px;}
+    .reply_list .son_cont{margin-top:20px;}
+    .reply_list .connt{margin-left:70px;}
+    .del_a{margin-left:20px; cursor: pointer;}
+</style>
+{/block}
+
+{block name="main"}
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+            <div class="cf eacoo-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="tab_list active"><a href="javascript:;">基本信息</a></li>
+                </ul>
+            </div>
+
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">
+                <div class="col-md-11">
+                    <form action="" method="post" class="form-builder form-horizontal">
+                    <fieldset>
+                        <input type="hidden" name="id" value="">
+                        <input type="hidden" name="type" value="{$info['type']}">
+                        <div class="tab_content">
+
+                            <div style="margin-left:70px;">
+                                <div>
+                                    <img class="headimg" src="{$user['headimg']}" alt="">
+                                    <span class="username text_color">{$user['username']}</span>
+                                    <span class="text_color">日期：{$info['create_date']}</span>
+                                </div>
+                                <div>
+                                    <p class="text_color" style="margin-top:20px;">{$info['content']} <a class="del_a" onclick="delete_comment({$info['id']},1)">删除</a></p>
+                                </div>
+                                <div style="margin-top:10px;">
+                                    {notempty name="info['video_url']"}
+                                    <a href="{$info['video_url']}" target="_blank">
+                                        <video class="video" src="{$info['video_url']}"></video>
+                                    </a>
+                                    {/notempty}
+                                    {volist name="info['imgarr']" id="img"}
+                                    <a href="{$img['imgurl']}" target="_blank"> <img class="imgarr_list" src="{$img['imgurl']}" alt=""></a>
+                                    {/volist}
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+
+
+                            {if condition="$info['check_status'] eq 0"}
+                            <div class="form-group item_title" style="margin-top:50px;">
+                                <label class="control-label" style="float: left; margin-left:70px;">审核状态：</label>
+                                <div class="radio radio-primary fl mr-10" style="float: left;">
+                                    <label class="radio-label">
+                                        <input type="radio" name="check_status" value="1" {if condition="$info['check_status'] eq 1"} checked {/if}/> 审核通过
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="check_status" value="2" {if condition="$info['check_status'] eq 2"} checked {/if} /> 审核不通过
+                                    </label>
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择</div>
+                            </div>
+
+                           <!-- <div class="form-group item_title">
+                                <label for="title" class="control-label" style="float: left; margin-left:70px;">不通过原因：</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="reason" value="" />
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 不通过状态必须填写</div>
+                            </div>-->
+                            {/if}
+
+
+
+                        </div>
+
+
+                        <div class="form-group" style="margin-top:100px">
+                            <div class="col-md-12">
+                                {if condition="$info['check_status'] eq 0"}
+                                <div class="col-md-2"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                {/if}
+                                <div class="col-md-2"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                            </div>
+                        </div>
+
+
+
+                         </fieldset>
+                  </form>
+
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script>
+
+$('select[name="position_id"]').change(function () {
+    var size = $(this).find('option:selected').attr('data-size');
+
+    if(size!=''){
+        $("#description").text('图片尺寸'+size);
+    }
+});
+
+
+$('.tab_list').click(function () {
+    var index = $(this).index();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.tab_content').eq(index).show().siblings('.tab_content').hide();
+});
+
+function delete_comment(id,type) {
+
+    layer.confirm('您确定要删除吗？', {
+        btn: ['确定','取消'] //按钮
+    }, function(){
+        $.post("{:url('delete_comment')}",{id:id,type:type},function (dd) {
+            if(dd.code==200){
+
+                if(type==1){
+                    layer.msg(dd.msg,{time:2000});
+                    window.location.href='/admin/comment/index';
+                }else if(type==3){
+                    layer.msg(dd.msg,{time:1500});
+                    $(".zp"+id).remove();
+                }else{
+                    layer.msg(dd.msg,{time:1500});
+                    $(".listfor"+id).remove();
+                }
+            }else{
+                layer.msg(dd.msg);
+            }
+        });
+    });
+}
+
+
+
+</script>
+
+
+
+
+{/block}

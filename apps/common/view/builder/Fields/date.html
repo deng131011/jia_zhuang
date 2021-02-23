@@ -1,0 +1,23 @@
+	{php}
+      $importDatetimePicker = 1;
+      if (strpos($field['name'],'[')) {
+          $field['id']=str_replace(']','',str_replace('[','',$field['name']));
+        }else{
+          $field['id']=$field['name'];
+        }
+  {/php}
+
+<input type="text" class="datepicker form-control" name="{$field.name}" id="{$field.id}" value="{notempty name='field.value'}{$field.value}{/notempty}" {$field.extra_attr|default=''}>
+
+
+    <link rel="stylesheet" href="/static/home/layui/css/layui.css">
+    <script src="/static/home/layui/layui.all.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+            //国际版
+            laydate.render({
+                elem: '#{$field.name}'
+            });
+        });
+    </script>

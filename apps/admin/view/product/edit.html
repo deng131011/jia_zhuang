@@ -1,0 +1,278 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}
+
+<style>
+    .add_list{background: #f3a800; color: #fff; padding:3px 15px; cursor: pointer; border-radius: 3px; margin-left:20px;}
+    .gg_list{margin-top: 5px; float: left;}
+    .comm_add .text2{width:200px; margin-left:10px;}
+    .gg_input{float: left; width:40%; margin-left: 5px;}
+    .gg_input2{width:20%;}
+    .btn_delete{display: inline-block; float: left;margin-top:5px; margin-left: 5px;}
+</style>
+
+
+{/block}
+
+{block name="main"}
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+            <div class="cf eacoo-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="tab_list active"><a href="javascript:;">基本信息</a></li>
+                    <li class="tab_list"><a href="javascript:;">拼团信息</a></li>
+                </ul>
+
+            </div>
+
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">
+                <div class="col-md-11">
+                  <form action="{:url('')}" method="post" class="form-builder form-horizontal">
+                    <fieldset>
+                      <input type="hidden" name="id" value="{$info.id}">
+
+                        <div class="tab_content">
+					    <div class="form-group item_title">
+							<label class="col-md-2 control-label">商品名称：</label>
+							<div class="col-md-4">
+							  <input type="text" class="form-control" name="title" placeholder="商品名称" value="{$info.title|default=''}" >
+							</div>
+						  <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须填写</div>
+					    </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">产品分类：</label>
+                                <div class="col-md-4">
+                                    <div style="width:45%;float: left">
+                                        <select class="form-control" name="type1" id="type1">
+                                            <option value="">一级分类</option>
+                                            {volist name="typelist" id="pro"}
+                                            <option value="{$pro['id']}" <?php if($info['type1']==$pro['id']){echo 'selected';} ?>>{$pro['title']}</option>
+                                            {/volist}
+                                        </select>
+                                    </div>
+
+                                    <div style="width:45% ; float: left; margin-left:10px;">
+                                        <select class="form-control" name="type2" id="type2">
+                                            <option value="">二级分类</option>
+                                            {notempty name="two_typelist"}
+                                            {volist name="two_typelist" id="ty"}
+                                            <option value="{$ty['id']}" <?php if($info['type2']==$ty['id']){echo 'selected';} ?>>{$ty['title']}</option>
+                                            {/volist}
+                                            {/notempty}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">展示原价：</label>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="old_price" placeholder="展示原价" value="{$info.old_price|default=0}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必填，只供展示</div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">展示现价：</label>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="show_price" placeholder="展示现价" value="{$info.show_price|default=0}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必填，只供展示</div>
+                            </div>
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">排序：</label>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" name="sort" placeholder="排序" value="{$info.sort|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"> </div>
+                        </div>
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">上架状态：</label>
+                            <div class="radio radio-primary fl mr-10">
+                                <label class="radio-label">
+                                    <input type="radio" name="status" value="1" <?php if($info['status']==1 || empty($info)){echo 'checked';} ?> > 已上架
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="status" value="2" <?php if($info['status']==2){echo 'checked';} ?> > 已下架
+                                </label>
+
+                            </div>
+                        </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">推荐状态：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="checkbox" name="flag[]" value="1" <?php if(in_array(1,explode(',',$info['flag']))){echo 'checked';} ?> > 爆款推荐
+                                    </label>
+                                   <label class="radio-label">
+                                        <input type="checkbox" name="flag[]" value="2" <?php if(in_array(2,explode(',',$info['flag']))){echo 'checked';} ?> > 产品推荐
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">基础信息：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <span class="add_list btn_add_list">＋添加</span>
+                                    <span class="help-block" style="display: inline">（依次为 ‘ 标题-对应值 ’，例：产地 - 广东）</span>
+                                </div>
+                                <div style="width: 100%; float: left;margin-top: 10px;">
+                                    <label class="col-md-2 control-label"></label>
+                                    <?php $data_json = !empty($info['data_json']) ? json_decode($info['data_json'],true) : []; ?>
+                                    <div class="col-md-6" id="controls_price">
+                                        {volist name="data_json" id="dea"}
+                                        <div class="gg_list">
+                                            <input type="text" class="form-control gg_input" name="data_title[]" placeholder="标题" value="{$dea['data_title']}" >
+                                            <input type="text" class="form-control gg_input" name="data_val[]" placeholder="值" value="{$dea['data_val']}" >
+                                            <a href="javascript:;" class="btn_delete">删除</a>
+                                        </div>
+                                        {/volist}
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group item_image">
+                                <label for="image" class="col-md-2 control-label">商品缩略图：</label>
+                                {include file="ad/picture"/}
+                            </div>
+                            <div class="form-group item_image">
+                                <label for="image" class="col-md-2 control-label">商品轮播图：</label>
+                                <div class="col-md-8" style="padding-bottom: 5px;padding-left: 5px;">
+                                {include file="ad/picture_arr"/}
+                                </div>
+                            </div>
+
+                            <div class="form-group item_image">
+                                <label for="image" class="col-md-2 control-label">详情图集：</label>
+                                <div class="col-md-8" style="padding-bottom: 5px;padding-left: 5px;">
+                                    {include file="public/picture_arr"/}
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="tab_content" style="display: none;">
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">拼团开关：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label typelist">
+                                        <input type="radio" name="team_open" value="2" <?php if($info['team_open']==2 || empty($info)){echo 'checked';} ?> > 关闭拼团
+                                    </label>
+                                    <label class="radio-label typelist">
+                                        <input type="radio" name="team_open" value="1" <?php if($info['team_open']==1){echo 'checked';} ?> > 开启拼团
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">拼团价格：</label>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="team_price" placeholder="拼团价格" value="{$info.team_price|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 拼团则用此价格</div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">拼团条件设置：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label typelist">
+                                        <input type="radio" name="team_condition" value="2" <?php if($info['team_condition']==2){echo 'checked';} ?> > 以人数达标为准
+                                    </label>
+
+                                </div>
+                                <div class="col-md-2" style="width: 160px; display: flex; align-items: center">
+                                    数量：
+                                    <input type="number" style="width: 80px;" class="form-control" name="team_num" placeholder="数量" value="{$info.team_num|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 参团达成条件设置</div>
+                            </div>
+
+                            <!--<div class="form-group item_title">
+                                <label class="col-md-2 control-label">商品详情：</label>
+                                <div class="col-md-8">
+                                    {:widget('common/editor/ueditor',[['id'=>'content','name'=>'content','value'=>$info['content']]])}
+                                </div>
+                            </div>-->
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-md-offset-2">
+                                <div class="col-md-3"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                            </div>
+                        </div>
+
+
+                         </fieldset>
+                  </form>
+
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+{include file="public/file"/}
+<script>
+    uploadcommer('#upload_file_1',"#video_url",1);
+</script>
+<script>
+$('select[name="position_id"]').change(function () {
+    var size = $(this).find('option:selected').attr('data-size');
+
+    if(size!=''){
+        $("#description").text('图片尺寸'+size);
+    }
+});
+
+
+$('.tab_list').click(function () {
+    var index = $(this).index();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.tab_content').eq(index).show().siblings('.tab_content').hide();
+});
+
+//切换分类
+$('#type1').change(function(){
+    var vals = $(this).val();
+    if(vals>0){
+        selectTypeTwo(vals,3,"#type2",'<option value="">二级分类</option>');
+    }
+});
+
+function selectTypeTwo(parent_id,level,select_list,str){
+    $.post("/Admin/Product/son_type",{parent_id:parent_id,level:level}, function(result){
+        $(select_list).html(str+result['msg'])
+    });
+}
+
+</script>
+
+<script type="text/javascript">
+    //规格名称添加
+    $(".btn_add_list").click(function () {
+        $html = '<div class="gg_list"><input type="text" class="form-control gg_input" name="data_title[]" placeholder="标题" value="" ><input type="text" class="form-control gg_input" name="data_val[]" placeholder="值" value="" ><a href="javascript:;" class="btn_delete">删除</a></div>';
+        $("#controls_price").append($html);
+    });
+    $("#controls_price").on('click','.btn_delete',function () {
+        $(this).parent('.gg_list').remove();
+    })
+</script>
+
+
+{/block}

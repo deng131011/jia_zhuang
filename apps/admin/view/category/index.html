@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="/static/assets/css/bootstrap.min.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">-->
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/AdminLTE.min.css" /><link rel="stylesheet" type="text/css" href="/static/admin/css/_all-skins.min.css" /><link rel="stylesheet" type="text/css" href="/static/assets/css/base.css" /><link rel="stylesheet" type="text/css" href="/static/libs/iCheck/all.css" /><link rel="stylesheet" type="text/css" href="/static/libs/toastr/toastr.min.css" />
+    <link type="text/css" href="/static/admin/css/style.css?v=1.3.1" rel="stylesheet" >
+    <script type="text/javascript" src="/static/assets/js/jquery-1.12.4.min.js"></script>
+    <!-- <script type="text/javascript" src="/static/assets/js/jquery-3.2.1.min.js"></script> -->
+    <script type="text/javascript">
+        var EacooPHP = window.EacooPHP = {
+            "eacoophp_version":"1.3.1",
+            "url_model":1,//1重写模式，2兼容模式
+            "root":'',
+            "root_domain": "http://192.168.1.8:801/admin.php", //当前网站地址
+            "static": "/static", //静态资源地址
+            "public": "/static/assets", //项目公共目录地址
+            "uploads_url" :'/uploads/',
+            "upload_driver":"local",
+            "cdn_domain":"http://192.168.1.8:801",
+            "eacoo_api_url":"https://www.eacoophp.com",
+        }
+    </script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+
+<body class="hold-transition skin-blue" style="background-color:#ecf0f5;">
+<div class="iframe-wrapper">
+    <section class="content-header">
+        <!-- 面包屑导航 -->
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> <a href="/admin.php/admin/dashboard/index.html" class="opentab" tab-title='首页' data-iframe="true" tab-name="navtab-collapse-1">首页</a></a></li>
+            <li class="active">其他分类 <span class="color-warning eacoo-menu-collect" data-title="其他分类" data-url="/admin.php/admin/category/index.html" title="标记为收藏" style="cursor: pointer;font-size: 13px;"> <i class="fa fa-star-o"></i></span></li>
+            <div class="pull-right mr-10" style="margin-top: -10px;">
+                <button type="button" class="btn btn-box-tool f16" onclick="javascript:location.reload();"><i class="fa fa-refresh"></i></button>
+            </div>
+        </ol>
+    </section>
+    <!--内容-->
+
+    <style type="text/css">
+        hr{margin-left: 20px;}
+        /* Builderform样式 */
+        .builder .form-horizontal .control-label{color: #333;}
+        label.checkbox-label{margin-bottom: 15px;}
+        .webuploader-pick{border: none!important;}
+
+        .help-block{font-size: 13px;line-height: 24px;font-weight: 500;color: #777;padding-left: 0;}
+        .help-block:hover{color: #555;}
+        .help-block i.fa{font-size: 15px;}
+
+        .citys_field{margin-bottom: 10px;}
+        .citys_field select{border-radius: 0;box-shadow: none;border-color: #d2d6de;height: 34px;padding: 6px 12px;font-size: 14px;line-height: 1.42857143;color: #555;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 4px;-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s}
+        /*上传个人图像*/
+        .upload-avatar-box{display: block;margin-top: 20px;width: 135px;height: 130px;line-height: 120px;}
+        .upload-avatar-box img{max-height: 120px;max-width: 125px;}
+        /*多图上传*/
+        .gallery-box-bg{background-color: #f0f0f0;padding: 10px 5px;margin-left:3%!important;}
+
+        .uploader-list .col-md-3{padding-left:5px;padding-right: 5px;}
+        .uploader-list .thumbnail{width: 100%;height: 135px;margin-bottom: 15px;}
+        .uploader-list .thumbnail img{max-width: 100%;height: 100%;}
+        /* Builderlist样式 */
+        #selectForm{display: inline;}
+        .builder-toolbar .form-group { margin-top: 0px; }
+        .icon-menu{top:33px;}
+
+        .builder_sub_title{font-size:13px;display: inline-block;border-radius:3px;color: #666;margin-top:10px;line-height: 26px;}
+        /*table*/
+        .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{font-size: 13px;}
+    </style>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/static/libs/bootstrap-table/bootstrap-table.min.css">
+    <section class="content pt-5">
+        <div class="box box-solid eacoo-box">
+            <!-- Tab导航 -->
+
+            <div class="box-body">
+                <div class="builder listbuilder-box">
+
+                    <!-- 顶部工具栏按钮 -->
+                    <!-- 数据列表 -->
+                    <div class="builder-container">
+                        <div class="row">
+
+                            <div class="builder-table col-sm-12">
+                                <div id="builder-toolbar" class="toolbar">
+
+                                    <!-- 工具栏按钮 -->
+                                    <!--<div class="form-group">-->
+                                    <a title="添加" icon="fa fa-plus" class="btn btn-primary btn-sm" href="{:url('edit',array('model'=>'Category'))}" primary-key="id"><i class="fa fa-plus"></i> 添加</a>&nbsp;
+                                   <!-- <a title="启用" target-form="ids" icon="fa fa-play" class="btn btn-success ajax-table-btn confirm btn-sm" href="{:url('setstatus',array('status'=>'resume','model'=>'Category'))}" model="Category" primary-key="id"><i class="fa fa-play"></i> 启用</a>&nbsp;
+                                    <a title="禁用" target-form="ids" icon="fa fa-pause" class="btn btn-warning ajax-table-btn confirm btn-sm" confirm-info="您确定要执行禁用操作吗？" href="{:url('setstatus',array('status'=>'forbid','model'=>'Category'))}" model="Category" primary-key="id"><i class="fa fa-pause"></i> 禁用</a>&nbsp;
+                                    <a title="删除" target-form="ids" icon="fa fa-remove" class="btn btn-danger ajax-table-btn confirm btn-sm" confirm-info="您确定要执行删除操作吗？" href="{:url('setstatus',array('status'=>'delete','model'=>'Category'))}" model="Category" primary-key="id"><i class="fa fa-remove"></i> 删除</a>&nbsp;-->
+                                   <!-- <a title="排序" icon="fa fa-sort" name="排序" class="btn btn-info btn-sm" href="/admin.php/admin/plantype/sort.html" model="Category" primary-key="id"><i class="fa fa-sort"></i> 排序</a>&nbsp;-->
+                                    <!-- </div>-->
+                                </div>
+                                <table id="builder-table" class="table table-responsive table-bordered table-hover dataTable"
+                                       data-pagination="true"
+                                       data-toolbar="#builder-toolbar"
+                                       data-query-params="queryParams"
+                                       data-show-refresh="true"
+                                       data-show-toggle="true"
+                                       data-show-columns="true"
+                                       width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th width="50" class="checkbox-toggle"
+                                            data-field="state"
+                                            data-checkbox="true">
+                                        </th>
+                                        <th data-field="id"  data-sortable="true">ID编号</th>
+
+                                        <th data-field="title_show"  data-sortable="true">名称</th>
+
+                                        <th data-field="sort"  data-sortable="true">排序</th>
+
+                                        <th data-field="status"  data-sortable="true">状态</th>
+
+                                        <th data-field="right_button"  data-sortable="true">操作</th>
+
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+
+
+                                    {volist name="menus" id="me"}
+                                    <tr>
+                                        <td width="50" class="checkbox-toggle"data-field="state"data-checkbox="true"></td>
+                                        <td data-field="id"  data-sortable="true">{$me['id']}</td>
+
+                                        <td data-field="title_show"  data-sortable="true">{$me['title_show']}</td>
+
+                                        <td data-field="sort"  data-sortable="true">{$me['sort']}</td>
+
+                                        <td data-field="status"  data-sortable="true">{$me['status']|forbidenStatus}</td>
+
+                                        <td data-field="right_button"  data-sortable="true">
+                                            {if condition="$me['status'] eq 1"}
+                                            <a class="btn btn-warning btn-xs ajax-get confirm" href="{:url('setstatus',array('status'=>'forbid','model'=>'Category','ids'=>$me['id']))}">禁用</a>
+                                            {else/}
+                                            <a class="btn btn-success btn-xs ajax-get confirm" href="{:url('setstatus',array('status'=>'resume','model'=>'Category','ids'=>$me['id']))}">启用</a>
+                                            {/if}
+                                            <a class="btn btn-success btn-xs" href="{:url('edit',array('id'=>$me['id']))}">编辑</a>
+                                            <a title="删除" icon="fa fa-remove" class="btn btn-danger btn-xs ajax-get confirm" confirm-info="您确定要执行删除操作吗？" href="{:url('setstatus',array('status'=>'delete','model'=>'Category','ids'=>$me['id']))}" style="margin-right:6px;"><i class="fa fa-remove"></i> </a>
+
+                                            {if condition="$me['page_type'] eq 2"}
+                                            <a class="btn btn-success btn-xs" href="{:url('Article/index',array('typeid'=>$me['id']))}">列表</a>
+                                            {/if}
+
+                                        </td>
+
+                                    </tr>
+                                    {/volist}
+
+                                    </tbody>
+
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 额外功能代码 -->
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/static/libs/bootstrap-table/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="/static/libs/tableExport/libs/FileSaver/FileSaver.min.js"></script>
+    <script type="text/javascript" src="/static/libs/tableExport/libs/html2canvas/html2canvas.min.js"></script>
+    <script src="/static/libs/tableExport/tableExport.min.js"></script>
+    <script src="/static/libs/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
+    <!-- Latest compiled and minified Locales -->
+    <script src="/static/libs/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+    <script type="text/javascript">
+
+
+        $(function () {
+            $("#search").click(function () {
+                $table.bootstrapTable('refresh');
+            });
+
+            //添加复选框
+            $(".builder-table .checkbox-toggle>.th-inner").html('<input name="btSelectAll" type="checkbox"/>');
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            //给数组增加查找指定的元素索引方法
+            Array.prototype.indexOf = function(val) {
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i] == val) return i;
+                }
+                return -1;
+            };
+
+            //给数组增加删除方法
+            Array.prototype.remove = function(val) {
+                var index = this.indexOf(val);
+                if (index > -1) {
+                    this.splice(index, 1);
+                }
+            };
+            //筛选框变化触发表单提交
+            $('[data-role="select_text"]').change(function(){
+                $('#selectForm').submit();
+            });
+        });
+        //筛选
+        $(document).on('submit', '.form-dont-clear-url-param', function(e){
+            e.preventDefault();
+
+            var seperator = "&";
+            var form = $(this).serialize();
+            var action = $(this).attr('action');
+            if(action == ''){
+                action = location.href;
+            }
+            var new_location = action +'?'+ seperator + form;
+            location.href = new_location;
+
+            return false;
+        });
+    </script>
+
+
+</div>
+<script type="text/javascript" src="/static/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/assets/js/jquery.cookie.js"></script>
+
+<!-- Slimscroll -->
+<script src="/static/libs/slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script type="text/javascript" src="/static/libs/fastclick/fastclick.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/app.min.js" ></script>
+<!-- <script  type="text/javascript" src="/static/assets/js/jquery.nestable.js"></script> -->
+<script  type="text/javascript" src="/static/libs/nice-validator/jquery.validator.min.js?local=zh-CN"></script>
+<!-- <script type="text/javascript" src="/static/assets/js/think.js"></script> -->
+<script type="text/javascript" src="/static/libs/layer/layer.js"></script>
+<script type="text/javascript" src="/static/libs/iCheck/icheck.min.js"></script>
+
+<script type="text/javascript" src="/static/libs/toastr/toastr.min.js"></script>
+
+<script type="text/javascript" src="/static/admin/js/common.js?v=1.3.1" ></script>
+<script type="text/javascript" src="/static/admin/js/eacoo.js?v=1.3.1" ></script>
+<script type="text/javascript" src="/static/admin/js/base.js?v=1.3.1" ></script>
+
+<script type="text/javascript">
+    (function ($) {
+
+    })(jQuery);
+</script>
+
+</body>
+</html>

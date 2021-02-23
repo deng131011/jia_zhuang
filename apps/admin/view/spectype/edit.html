@@ -1,0 +1,69 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">    
+
+                <div class="col-md-11">
+                  <form action="" method="post" class="form-builder form-horizontal">
+                    <fieldset>
+
+                      <input type="hidden" name="id" value="{$info.id}">
+                          <div class="form-group item_title">
+                                <label for="title" class="col-md-2 control-label">规格分类名称：</label>
+                                <div class="col-md-4">
+                                  <input type="text" class="form-control" name="title" placeholder="规格分类名称" value="{$info.title|default=''}" >
+                                </div>
+                              <div class="col-md-5 help-block">必须填写</div>
+                          </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">价格类别：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="radio" name="type" value="1" <?php if($info['type']==1 || empty($info)){echo 'checked';} ?> > 影响价格
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="type" value="2" <?php if($info['type']==2){echo 'checked';} ?> > 常规规格
+                                    </label>
+                                    <!--<label class="radio-label">
+                                        <input type="radio" name="type" value="3" <?php if($info['type']==3){echo 'checked';} ?> > 子商品规格
+                                    </label>-->
+                                </div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">有无图片：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="radio" name="have_picture" value="1" <?php if($info['have_picture']==1){echo 'checked';} ?> > 有
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="have_picture" value="2" <?php if($info['have_picture']==2 || empty($info)){echo 'checked';} ?> > 无
+                                    </label>
+                                    <!--<label class="radio-label">
+                                        <input type="radio" name="type" value="3" <?php if($info['type']==3){echo 'checked';} ?> > 子商品规格
+                                    </label>-->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-md-offset-2">
+                                  <div class="col-md-3"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                  <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                              </div>
+                          </div>
+                         </fieldset>
+                  </form>
+
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+

@@ -1,0 +1,110 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+        {present name="group_id"}
+          <div class="eacoo-tabs builder-form-tabs">
+              <ul class="nav nav-tabs">
+                  <li class="active"><a href="{:url('edit',['group_id'=>$group_id])}">角色信息</a></li>
+                  <li class=""><a href="{:url('access',['group_id'=>$group_id])}">权限分配</a></li>
+                  <li class=""><a href="{:url('accessUser',['group_id'=>$group_id])}">成员授权</a></li>
+              </ul>
+
+          </div>
+        {/present}
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">    
+
+                <div class="col-md-11">
+                  <form action="" method="post" class="form-builder form-horizontal">
+                    <fieldset>
+
+                      <input type="hidden" name="id" value="{$info.id}">
+
+
+                          <div class="form-group item_title">
+                                <label for="title" class="col-md-2 control-label">广告名称：</label>
+                                <div class="col-md-4">
+                                  <input type="text" class="form-control" name="title" placeholder="广告名称" value="{$info.title|default=''}" >
+                                </div>
+                              <div class="col-md-5 help-block"></div>
+                          </div>
+
+                        <div class="form-group item_title">
+                            <label for="title" class="col-md-2 control-label">广告位置：</label>
+                            <div class="col-md-4">
+                                <select name="position_id" class="form-control">
+                                    <option value="">请选择广告位</option>
+                                    {volist name="position" id="po"}
+                                    <option value="{$po['id']}" data-size="{$po['size']}" <?php if($po['id']==$info['position_id']){echo 'selected';} ?>  >{$po['title']}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i>必须选择</div>
+                        </div>
+
+                          <div class="form-group item_title">
+                                <label for="title" class="col-md-2 control-label">链接类型：</label>
+                                <div class="col-md-4">
+                                    <select name="linktype" id="target" class="form-control">
+                                        <option value="">请选择链接类型</option>
+                                        {volist name="linktype" id="lk" key="kk"}
+                                        <option value="{$kk}" <?php if($kk==$info['linktype']){echo 'selected';} ?> >{$lk}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                                <div class="col-md-5 help-block"></div>
+                          </div>
+
+                        <div class="form-group item_title">
+                            <label for="title" class="col-md-2 control-label">链接地址：</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="url" placeholder="链接地址" value="{$info.url|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i>外链接填写带http://的全路径，其他类型请填写对应ID</div>
+                        </div>
+
+                        <div class="form-group item_title">
+                            <label for="title" class="col-md-2 control-label">排序：</label>
+                            <div class="col-md-4">
+                                <input type="number" class="form-control" name="sort" placeholder="排序" value="{$info.sort|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+                        <div class="form-group item_image">
+                            <label class="col-md-2 control-label">图片</label>
+                            {include file="ad/picture"/}
+                        </div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-md-offset-2">
+                                  <div class="col-md-3"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                  <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                              </div>
+                          </div>
+
+                         </fieldset>
+                  </form>
+
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script>
+$('select[name="position_id"]').change(function () {
+    var size = $(this).find('option:selected').attr('data-size');
+
+    if(size!=''){
+        $("#description").text('图片尺寸'+size);
+    }
+});
+
+</script>
+{/block}

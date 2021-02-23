@@ -1,0 +1,258 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<style type="text/css">
+    .layui-upload-file{
+        display: none !important;
+    }
+    .kinds-select .select2{
+        margin-right: 10px!important;
+    }
+
+
+</style>
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+            <div class="cf eacoo-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="tab_list active"><a href="javascript:;">基本信息</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="builder formbuilder-box panel-body bg-color-fff">
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <form action="" method="post" class="form-builder form-horizontal">
+                            <fieldset>
+                                <input type="hidden" name="id" value="{$info.id}" id="business_id">
+
+                                <div class="tab_content">
+
+                                    <div class="form-group item_title ">
+                                        <label for="title" class="col-md-2 control-label">店铺名称：</label>
+                                        <div class="col-md-5">
+                                            <input type="text" class="form-control" name="title" value="{$info.title|default=''}"></div>
+                                        <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i>必须填写</div>
+                                    </div>
+                                    <div class="form-group item_title ">
+                                        <label for="title" class="col-md-2 control-label">宣传语：</label>
+                                        <div class="col-md-5">
+                                            <input type="text" class="form-control" name="xc_bref" value="{$info.xc_bref|default=''}"></div>
+                                    </div>
+                                    <div class="form-group item_title">
+                                        <label class="col-md-2 control-label">商家分类：</label>
+                                        <div class="col-md-2">
+                                            <select class="form-control" name="type1" id="type1">
+                                                <option value="">选择分类</option>
+                                                {volist name="category" id="pro"}
+                                                <option value="{$pro['id']}" <?php if($info['type1']==$pro['id']){echo 'selected';} ?>>{$pro['title']}</option>
+                                                {/volist}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择</div>
+                                    </div>
+
+
+
+                                    <div class="form-group item_title ">
+                                        <label for="title" class="col-md-2 control-label">商家折扣：</label>
+                                        <div class="col-md-3">
+                                            <input type="number" class="form-control" name="zhe_kou"  value="{$info.zhe_kou}">
+                                        </div>
+                                        <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 例：8.8折填写8.8，零则无折扣</div>
+                                    </div>
+                                    <div class="form-group item_title ">
+                                        <label for="title" class="col-md-2 control-label">联系电话：</label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" name="mobile" value="{$info.mobile|default=''}" onkeyup="value = value.replace(/[^0-9]/g,'')" maxlength="11" />
+                                        </div>
+                                        <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择</div>
+                                    </div>
+                                    <!--店铺详细地址-->
+                                    <div class="form-group item_title ">
+                                        <label for="address" class="col-md-2 control-label">详细地址：</label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" name="address" value="{$info.address|default=''}"></div>
+                                        <div class="btn btn-success" style="float:left;margin-right:5px;" onclick="get_lnglat()">获取经纬度</div>
+                                        <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i>
+                                            必须是带有省市区的正确详细地址
+                                        </div>
+                                    </div>
+                                    <div class="form-group item_title">
+                                        <label class="col-md-2 control-label">经纬度：</label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" name="lng_lat" id="lng_lat" placeholder="经纬度" value="{$info.lng_lat|default=''}" readonly />
+                                        </div>
+                                        <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 经纬度必须获取</div>
+                                    </div>
+
+
+                                    <div class="form-group item_title ">
+                                        <label for="address" class="col-md-2 control-label">营业时间：</label>
+                                        <div class="col-md-2">
+                                            <input type="text" class="form-control" name="yingye_time" value="{$info.yingye_time|default=''}"></div>
+                                        <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i>
+                                            例：10:00-17:00,英文冒号，短横线组成
+                                        </div>
+                                    </div>
+                                    <div class="form-group item_title">
+                                        <label class="col-md-2 control-label">是否需要预约：</label>
+                                        <div class="radio radio-primary fl mr-10">
+                                            <label class="radio-label">
+                                                <input type="radio" name="need_order" value="1" <?php if($info['need_order']==1 ){echo 'checked';} ?> > 需要
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="need_order" value="2" <?php if($info['need_order']==2 || empty($info)){echo 'checked';} ?> > 不需要
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group item_title">
+                                        <label class="col-md-2 control-label">经营类型：</label>
+                                        <div class="radio radio-primary fl mr-10">
+                                            <label class="radio-label">
+                                                <input type="radio" name="is_food" value="1" <?php if($info['is_food']==1 ){echo 'checked';} ?> > 美食商家
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="is_food" value="2" <?php if($info['is_food']==2){echo 'checked';} ?> > 酒店商家
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="is_food" value="4" <?php if($info['is_food']==4){echo 'checked';} ?> > 景区商家
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="radio" name="is_food" value="3" <?php if($info['is_food']==3 || empty($info)){echo 'checked';} ?> > 其他商家
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group item_title">
+                                        <label class="col-md-2 control-label">酒店链接：</label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" name="hotel_url" placeholder="" value="{$info.hotel_url|default=''}" />
+                                        </div>
+                                        <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 酒店商家必填，例：http://www.aaa.com</div>
+                                    </div>
+                                    <div class="form-group item_title">
+                                        <label class="col-md-2 control-label">推荐状态：</label>
+                                        <div class="radio radio-primary fl mr-10">
+                                            <label class="radio-label">
+                                                <input type="checkbox" name="flag[]" value="1" <?php if(in_array(1,explode(',',$info['flag']))){echo 'checked';} ?> > 新店尝鲜
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="checkbox" name="flag[]" value="2" <?php if(in_array(2,explode(',',$info['flag']))){echo 'checked';} ?> > 好店推荐
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="checkbox" name="flag[]" value="3" <?php if(in_array(3,explode(',',$info['flag']))){echo 'checked';} ?> > 商家大促
+                                            </label>
+                                            <label class="radio-label">
+                                                <input type="checkbox" name="flag[]" value="4" <?php if(in_array(4,explode(',',$info['flag']))){echo 'checked';} ?> > 本周人气
+                                            </label>
+
+                                            <label class="radio-label">
+                                                <input type="checkbox" name="flag[]" value="5" <?php if(in_array(5,explode(',',$info['flag']))){echo 'checked';} ?> > 首页推荐
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group item_title">
+                                        <label class="col-md-2 control-label">收藏数量：</label>
+                                        <div class="col-md-3">
+                                            <input type="number" class="form-control" name="collect_num" placeholder="" value="{$info.collect_num|default=''}" />
+                                        </div>
+                                    </div>
+                                    <!--店铺图片-->
+                                    <div class="form-group item_void_icon ">
+                                        <label for="icon" class="col-md-2 control-label">列表缩略图：</label>
+                                        <div class="col-md-6" style="padding-bottom: 5px;padding-left: 5px;">
+                                            <div class="controls" style="padding-bottom: 5px;padding-left: 5px;">
+                                                <input class="attach" type="hidden" id="icon" name="icon" value="{$info.icon|default=''}"/>
+                                                <div>
+                                                    <span class="btn btn-info ml-10 mt-10 btn-sm" data-url="/admin.php?s=/admin/upload/attachmentlayer/input_id_name/icon/path_type/picture/gettype/single.html" onclick="openAttachmentLayer(this);"><i class="fa fa-file-image-o"></i> 选择图片</span>
+                                                </div>
+                                                <div class="upload-img-box tc popup-gallery fl img-thumbnail pr ">
+                                                    <div class="each">
+                                                        {notempty name="$info['icon']"}
+                                                        <img src="{php}echo get_image($info['icon']);{/php}">
+                                                        {else/}
+                                                        <img src="/static/assets/img/noimage.gif">
+                                                        {/notempty}
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--店铺环境-->
+                                    <div class="form-group item_image">
+                                        <label for="image" class="col-md-2 control-label">轮播图集：</label>
+                                        <div class="col-md-8" style="padding-bottom: 5px;padding-left: 5px;">
+                                            {include file="ad/picture_arr"/}
+                                        </div>
+                                    </div>
+                                    <!--店铺环境-->
+
+
+                                   <div class="form-group item_title">
+                                        <label class="col-md-2 control-label">商家详情：</label>
+                                        <div class="col-md-8">
+                                            {:widget('common/editor/ueditor',[['id'=>'content','name'=>'content','value'=>$info['content']]])}
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 col-md-offset-2">
+                                        <div class="col-md-3"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                        <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                                    </div>
+                                </div>
+
+
+
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script>
+
+    $('.tab_list').click(function () {
+        var index = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.tab_content').eq(index).show().siblings('.tab_content').hide();
+    });
+
+    //获取经纬度
+    function get_lnglat(){
+        var start_addr = $("input[name='address']").val();
+        if($.trim(start_addr)==''){
+            layer.msg('请正确填写详细地址'); return false;
+        }
+        $.post('{:url("China/get_lng_lat")}',{start_addr:start_addr},function(dd){
+            if(dd.code==200){
+                $("#lng_lat").val(dd.data);
+            }else{
+                layer.alert(dd.msg);
+            }
+        })
+
+    }
+</script>
+
+
+
+
+{/block}

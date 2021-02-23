@@ -1,0 +1,35 @@
+
+
+
+<link href="/static/home/layui/css/layui.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" charset="utf-8" src="/static/home/layui/layui.all.js"></script>
+<script>
+    //上传附件
+    function uploadcommer(ider,cont,file_type) {
+
+        layui.use('upload', function(){
+            var upload = layui.upload;
+            //执行实例
+            var uploadInst = upload.render({
+                elem:ider //绑定元素
+                ,url: '/Admin/upload/upload' //上传接口
+                ,accep:'file'
+                ,exts:'mp4|mp3|doc'
+                ,data:{type:'file',file_type:file_type}
+                ,before: function(obj){
+                    layer.load(); //上传loading
+                }
+                ,done: function(res){
+                    layer.closeAll('loading'); //关闭loading
+                    if(res.code==1){
+                        $(cont).val(res.data.path);
+                    }else{
+                        layer.msg(res.msg);
+                    }
+                }
+            });
+        });
+    }
+
+
+</script>

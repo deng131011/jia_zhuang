@@ -1,0 +1,138 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/libs/bootstrap-table/bootstrap-table.min.css">
+
+<!----- 搜索 ----->
+<section class="row-content pt-5">
+    <div class="box box-default">
+        <div class="box-header with-border pb-0">
+            <h3 class="box-title">高级查询</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <form id="search_form" action="{:url('')}" method="get">
+        <div class="box-body" id="eacoo-toolbar">
+            <div class="form-inline" role="form">
+                <div class="form-group mt-10">
+                    
+                    <input type="text" class="form-control" name="keywords" value="{$get['keywords']}" placeholder="请输入查询关键字">
+                </div>
+                <div class="form-group mt-10">
+                    <button type="button" class="btn btn-success search-btn" id="search">查询</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</section>
+
+<section class="content pt-5">
+        <div class="box-body" style="background: #fff;">
+            <div class="builder listbuilder-box">
+                <!-- 顶部工具栏按钮 -->
+                <!-- 数据列表 -->
+                <div class="builder-container">
+                    <div class="row">
+
+                        <div class="builder-table col-sm-12">
+                        <div class="bootstrap-table">
+                                <div class="fixed-table-toolbar"><div class="bs-bars pull-left">
+                                    <div id="builder-toolbar" class="toolbar">
+                                    <!-- 工具栏按钮 -->
+                                    <!--<div class="form-group">-->
+                                        <a title="删除" target-form="ids" icon="fa fa-remove" class="btn btn-danger ajax-table-btn confirm btn-sm" confirm-info="您确定要执行删除操作吗？" href="{:url('setstatus',array('status'=>'delete'))}" data-my="1" primary-key="id"><i class="fa fa-remove"></i> 删除</a>
+
+                                    <!-- </div>-->
+                                    </div>
+                                </div>
+
+                                <div class="fixed-table-container" style="padding-bottom: 0px;">
+                                    <div class="fixed-table-header" ></div>
+                                    <table id="builder-table" class="table table-responsive table-bordered table-hover dataTable" data-pagination="true" data-toolbar="#builder-toolbar" data-query-params="queryParams" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th class="bs-checkbox checkbox-toggle" style="width: 36px;" data-field="state">
+                                                <input name="btSelectAll" type="checkbox" >
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">反馈用户</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">联系方式</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">反馈终端</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+
+                                            <th style="width:25%;" >
+                                                <div class="th-inner sortable both">反馈意见</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+
+                                            <th style="" >
+                                                <div class="th-inner sortable both">提交时间</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="">
+                                                <div class="th-inner sortable both">状态</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="">
+                                                <div class="th-inner sortable both">操作</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name="list" id="vo"}
+                                        <tr data-index="{$key}" data-uniqueid="{$vo['id']}">
+                                            <td class="bs-checkbox">
+                                                <input data-index="{$key}" name="ids[]" type="checkbox" value="{$vo['id']}">
+                                            </td>
+                                            <td style="">{$vo['username']|default=$vo['usernameb']}</td>
+                                            <td style="">{$vo['mobile']|default=$vo['mobileb']}</td>
+                                            <td style="">{$vo['typeid']|modelField="category","title"}</td>
+                                            <td style="">{$vo['content']}</td>
+                                            <td style="">{$vo['create_time']|mydate}</td>
+                                            <td style="">{if condition="$vo['check_status'] eq 1"} 已处理 {else/} <font style="color: red;">未处理</font> {/if}</td>
+                                            <td style="">
+                                                <a class="btn btn-success btn-xs" href="{:url('details',array('id'=>$vo['id']))}">详情</a>
+                                                <a title="删除" icon="fa fa-remove" class="btn btn-danger btn-xs ajax-get confirm" confirm-info="您确定要执行删除操作吗？" href="{:url('setstatus',array('status'=>'delete','ids'=>$vo['id']))}">删除</a>
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="fixed-table-pagination" style="display: block;">
+                                    <div class="pull-left pagination-detail">
+                                        <span class="pagination-info">总共 {$list->total()} 条记录</span>
+                                    </div>
+                                    <div class="pull-right pagination">
+                                        {$list->render()}
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{include file="Public/between_time"}
+<script>
+    var $table = $('#builder-table');
+
+
+</script>
+
+{/block}

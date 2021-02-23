@@ -1,0 +1,172 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+            <div class="cf eacoo-tabs">
+                <ul class="nav nav-tabs">
+                    <!--<li class="tab_list active"><a href="javascript:;">基本信息</a></li>
+                    <li class="tab_list"><a href="javascript:;">其他信息</a></li>-->
+                </ul>
+
+            </div>
+
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">
+                <div class="col-md-11">
+                  <form action="{:url('')}" method="post" class="form-builder form-horizontal">
+                    <fieldset>
+                      <input type="hidden" name="id" value="{$info.id}">
+
+                        <div class="tab_content">
+					    <div class="form-group item_title">
+							<label class="col-md-2 control-label">直播标题：</label>
+							<div class="col-md-4">
+							  <input type="text" class="form-control" name="title" placeholder="直播标题" value="{$info.title|default=''}" >
+							</div>
+						  <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须填写</div>
+					    </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">收费状态：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="radio" name="free_status" value="1" <?php if($info['free_status']==1 || empty($info)){echo 'checked';} ?> > 免费
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="free_status" value="2" <?php if($info['free_status']==2){echo 'checked';} ?> > 购买课程者免费
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="free_status" value="3" <?php if($info['free_status']==3){echo 'checked';} ?> > 收费
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">直播价格：</label>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="new_price" placeholder="价格" value="{$info.new_price|default=''}" onkeyup="value = value.replace(/[^0-9.]/g,'')" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须填写</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">直播日期：</label>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control" id="open_date" name="open_date" placeholder="" value="{$info.open_date|default=''}" readonly >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须填写</div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">直播时间：</label>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control" id="start_time" name="start_time" placeholder="" value="{$info.start_time|default=''}" readonly >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须填写,例：9:00-10:00</div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">讲师姓名：</label>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control"  name="teacher" placeholder="" value="{$info.teacher|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须填写</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">观看人数：</label>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control"  name="look_num" placeholder="" value="{$info.look_num|default=0}" >
+                                </div>
+
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">首页推荐：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="radio" name="flag" value="1" <?php if($info['flag']==1 || empty($info)){echo 'checked';} ?> > 推荐
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="flag" value="2" <?php if($info['flag']==2){echo 'checked';} ?> > 不推荐
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">直播状态：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label" style="color: red">
+                                        {if condition="$info['status'] eq 2"}
+                                        直播中
+                                        {elseif condition="$info['status'] eq 3"/}
+                                        直播结束
+                                        {elseif condition="$info['status'] eq 5"/}
+                                        未开始
+                                        {/if}
+                                    </label>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="form-group item_self_inter ">
+                            <label for="content" class="col-md-2 control-label">直播介绍：</label>
+                            <div class="col-md-6" >
+                                {:widget('common/editor/ueditor',[['id'=>'zb_brief','name'=>'zb_brief','value'=>$info['zb_brief']]])}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-md-offset-2">
+                                <div class="col-md-3"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                            </div>
+                        </div>
+
+
+                         </fieldset>
+                  </form>
+
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<link rel="stylesheet" href="/static/home/layui/css/layui.css">
+<script src="/static/home/layui/layui.all.js" charset="utf-8"></script>
+<script>
+
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //国际版
+        laydate.render({
+            elem: '#open_date',
+            min:""
+        });
+        laydate.render({
+            elem: '#start_time'
+            ,type: 'time'
+            ,range: true
+            ,format:"HH:mm"
+        });
+    });
+
+
+
+</script>
+
+
+
+
+{/block}

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>ColorPicker颜色选择器演示程序</title>
+        <style>
+          
+        </style>
+    </head>
+    <body>
+        <div id="">
+        <script type="text/javascript" src="jquery.js"></script> 
+        <script type="text/javascript" src="jquery.colorpicker.js"></script> 
+    
+    <blockquote>
+        请输入颜色值：<input type="text" id="cp2" />
+     
+    </blockquote>
+    
+	</div>
+<script type="text/javascript">
+    $(function(){
+        
+        $("#cp2").colorpicker({
+            fillcolor:true,
+            success:function(o,color){
+                $(o).css("color",color);
+            }
+        });
+       
+    });
+</script>
+            </div></span>
+        </div>
+    </body>
+</html>

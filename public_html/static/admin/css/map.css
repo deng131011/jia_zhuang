@@ -1,0 +1,58 @@
+
+html,
+body{
+width:100%;
+height:100%;
+margin:0px;
+}
+#outer-box{
+height:100%;
+padding-right:280px;
+}
+#container{
+height:100%;
+width:100%;
+}
+#panel{
+position:absolute;
+top:10px;
+right:10px;
+height: 100%;
+overflow: hidden;
+overflow-y: scroll;
+width:260px;
+z-index:999;
+}
+#my-list{
+margin:0;
+padding:0;
+}
+#my-list li{
+background:#eee;
+margin:10px 0;
+list-style:none;
+padding:0;
+padding:10px;
+cursor:pointer;
+}
+#my-list li p{
+margin:5px;
+}
+#my-list li.selected{
+background:green;
+color:#fff;
+}
+.selected .amap-marker-label{
+background:green;
+color:#fff;
+border-color:#ccc;
+}
+#panel h3{
+margin:10px 0;
+}
+#panel dd{
+margin:5px 5px;
+}
+#panel dl{
+margin:7px 0;
+}

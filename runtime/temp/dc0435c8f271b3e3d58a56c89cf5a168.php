@@ -1,0 +1,2 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:84:"G:\phpstudy\www\jia_zhuang\public_html/../apps//common/view/builder/formbuilder.html";i:1562295570;s:46:"../apps/common/view/builder/Fields/hidden.html";i:1556705925;}*/ ?>
+<input type="hidden" class="form-control" id="<?php echo $field['name']; ?>" name="<?php echo $field['name']; ?>" value="<?php echo (isset($field['value']) && ($field['value'] !== '')?$field['value']:''); ?>" <?php echo (isset($field['extra_attr']) && ($field['extra_attr'] !== '')?$field['extra_attr']:""); ?>> 

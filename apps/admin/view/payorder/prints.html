@@ -1,0 +1,118 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+
+
+<section class="content pt-5" >
+
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">    
+
+                <div class="col-md-11">
+                    <fieldset id="print_content">
+                        <style>
+                            table{width:100%;}
+                            tr{height:50px;}
+                            td,th{padding:0 5px;}
+                            .form-item1 td{text-indent: 20px; font-size: 16px;}
+                            .product_table td{text-align: center;}
+                            .product_table .img1 img{width:50px; height: 50px; border:1px solid #e4dfdf; margin-top:5px;}
+                            .item-label2{text-align: right; margin-bottom: 10px;}
+                            .item-label2 span{margin-right: 10px;}
+                            .hhh{float: left; margin-right: 10px;}
+                            .other_price{height:50px; line-height: 50px;}
+                            .other_price .right{float: right; width:20%;}
+                            .other_price span{font-size: 16px; color: red;}
+                            .other_price .span1{text-align: right; float: left; display: block;width: 50%;}
+                        </style>
+					    <div class="form-group item_title">
+                            <label class="item-label">基本信息：</label>
+                            <table border="1" cellspacing="0" cellpadding="0" border-color="#e0e0e0" style="border-collapse:collapse; border:1px solid #e0e0e0;">
+                                <tr>
+                                    <td width="10%" >订单号：{$info.order_number}</td>
+                                    <td width="10%">提交时间：{$info.create_time|date='Y-m-d H:i:s',###}</td>
+                                    <td width="10%" colspan="2">订单状态：{$info['orderstatus']['msg']}</td>
+                                </tr>
+                                <tr>
+                                    <td width="10%">收货姓名：{$info.order_user}</td>
+                                    <td width="10%">联系电话：{$info.order_mobile}</td>
+                                    <td width="10%" colspan="2">收货地址：{$info['address']}</td>
+                                </tr>
+                                <tr>
+                                    <td width="10%">支付状态：{if condition="$info['pay_status'] eq 0"}待支付{elseif condition="$info['pay_status'] eq 1"/}<font style="color: red;">支付成功</font>{/if}</td>
+                                    <td width="10%">支付方式：{$info.pay_type|payTypeTitle}</td>
+                                    <td width="10%">支付金额：{if condition="$info['order_type'] eq 2"}{$info['pay_score']}积分{else/}￥{$info['pay_price']}{/if}</td>
+                                    <td width="10%">支付时间：{$info.pay_time|mydate}</td>
+                                </tr>
+                                <tr>
+                                    <td width="10%" colspan="4">订单备注：{$info['remark']}</td>
+                                </tr>
+                                <tr>
+                                    <td width="10%" >快递公司：{notempty name="logic"}{$logic['title']}{/notempty}</td>
+                                    <td width="10%" colspan="3">快递单号：{notempty name="logic"}{$logic['kuaidi_number']}{/notempty}</td>
+                                </tr>
+
+                            </table>
+					    </div>
+
+                        <div class="form-group item_title" style="margin-bottom: 30px; margin-top:20px;">
+                            <label class="item-label">商品信息：</label>
+                            <table border="1" cellspacing="0" cellpadding="0" border-color="#e0e0e0" style="border-collapse:collapse; border:1px solid #e0e0e0;">
+                                <tr class="product_table">
+                                    <td width="3%">序号</td>
+                                    <td width="6%">商品图片</td>
+                                    <td width="15%">商品名称</td>
+                                    <td width="5%">购买数量</td>
+                                    <td width="10%">商品金额</td>
+                                    <td width="10%">售后状态</td>
+                                </tr>
+                                {volist name="sonlist" id="vot" key="kk"}
+                                    <tr class="product_table">
+                                        <td width="">{$kk}</td>
+                                        <td width="" class="img1"><img src="{$vot['imgurl']} "></td>
+                                        <td width="">{$vot['title']}</td>
+                                        <td width="">{$vot['num']}</td>
+                                        <td width="">{if condition="$vot['pay_score'] gt 0"}{$vot['pay_score']}积分{else/}￥{$vot['pay_price']}{/if}</td>
+                                        <td width="">{$vot['afterStatus']['msg']}</td>
+                                    </tr>
+                                {/volist}
+                            </table>
+                            <div class="other_price"><div class="right"><span class="span1">优惠券优惠：</span><span>￥{$info['coupon_price']}</span></div></div>
+                            <div class="other_price"><div class="right"><span class="span1">保鲜盒：</span><span>￥{$info['baoxian_price']}</span></div></div>
+                            <div class="other_price"><div class="right"><span class="span1">运费：</span><span>￥{$info['send_price']}</span></div></div>
+                            <div class="other_price"><div class="right"><span class="span1">总额：</span><span>
+                                  {if condition="$info['order_type'] eq 2"}{$info['pay_score']}积分{else/}￥{$info['pay_price']}{/if}
+                            </span></div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-2" style="margin-left: 0 !important;">
+                            <div class="col-md-3"><button class="btn btn-block btn-success return" onclick="btn_print()">打印</button></div>
+                        </div>
+                    </div>
+                </div>
+
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script language="javascript" src="/static/admin/print/jquery-1.4.4.min.js"></script>
+<script language="javascript" src="/static/admin/print/jquery.jqprint-0.3.js"></script>
+<script>
+    //打印
+    function btn_print(){
+        $("#print_content").jqprint();
+    }
+</script>
+
+{/block}

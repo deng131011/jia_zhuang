@@ -1,0 +1,297 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+            <div class="cf eacoo-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="tab_list active"><a href="javascript:;">基本信息</a></li>
+                </ul>
+
+            </div>
+
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">
+                <div class="col-md-11">
+                  <form action="{:url('')}" method="post" class="form-builder form-horizontal">
+                    <fieldset>
+                      <input type="hidden" name="id" value="{$info.id}">
+
+                        <div class="tab_content">
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">作者姓名：</label>
+                                <div class="col-md-4">
+                                  <input type="text" class="form-control" name="title" placeholder="标题" value="{$info.title|default=''}" >
+                                </div>
+                              <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须填写</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">课程类别：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="radio" name="tb_type" value="1" <?php if($info['tb_type']==1 || empty($info['tb_type'])){echo 'checked';} ?> > 基础课程
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="tb_type" value="2" <?php if($info['tb_type']==2){echo 'checked';} ?> > 单曲讲解
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">课程分类：</label>
+                                <div class="col-md-4">
+                                    <div style="width:45%;float: left">
+                                        <select class="form-control" name="type1" id="type1">
+                                            <option value="">一级分类</option>
+                                            {volist name="typelist" id="pro"}
+                                            <option value="{$pro['id']}" <?php if($info['type1']==$pro['id']){echo 'selected';} ?>>{$pro['title']}</option>
+                                            {/volist}
+                                        </select>
+                                    </div>
+
+                                    <div style="width:45% ; float: left; margin-left:10px;">
+                                        <select class="form-control" name="type2" id="type2">
+                                            <option value="">二级分类</option>
+                                            {notempty name="two_typelist"}
+                                            {volist name="two_typelist" id="ty"}
+                                            <option value="{$ty['id']}" <?php if($info['type2']==$ty['id']){echo 'selected';} ?>>{$ty['title']}</option>
+                                            {/volist}
+                                            {/notempty}
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">课程售价：</label>
+                                <div class="col-md-4">
+                                    <input type="number" class="form-control" name="new_price" placeholder="" value="{$info.new_price|default=0}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i>免费则填0</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">校长折扣：</label>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="xiaoz_rebate" placeholder="折扣" value="{$info.xiaoz_rebate|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block">例：8折请填8，无折扣填写0</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">院长折扣：</label>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="yuanz_rebate" placeholder="折扣" value="{$info.yuanz_rebate|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block">例：8折请填8，无折扣填写0</div>
+                            </div>
+
+
+                            <!--<div class="form-group item_title">
+                                <label class="col-md-2 control-label">乐币抵扣比例：</label>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="lebi_scale" placeholder="" value="{$info.lebi_scale|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block"> % 抵扣价格的比例，例：10%请填10</div>
+                            </div>-->
+
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">适用人群：</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="shihe_person" placeholder="" value="{$info.shihe_person|default=''}" >
+                                </div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">学习目标：</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="target" placeholder="" value="{$info.target|default=''}" >
+                                </div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">推荐：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="checkbox" name="flag" value="1" <?php if($info['flag']==1){echo 'checked';} ?> > 首页推荐
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">课程标签：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    {volist name="tab_list" id="tabli"}
+                                    <label class="radio-label">
+                                        <input type="radio" name="tab_id" value="{$tabli['id']}" <?php if($info['tab_id']==$tabli['id']){echo 'checked';} ?> > {$tabli['title']}
+                                    </label>
+                                    {/volist}
+                                </div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">是否能兑换：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="radio" name="can_dui" value="1" <?php if($info['can_dui']==1 || empty($info['can_dui'])){echo 'checked';} ?> > 可以
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="can_dui" value="2" <?php if($info['can_dui']==2){echo 'checked';} ?> > 不可以
+                                    </label>
+                                </div>
+                                <div class="col-md-5 help-block"> <i class="fa fa-info-circle color-info1"></i>购买会员后能否兑换该课程</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">关联老师类型：</label>
+                                <div class="radio radio-primary fl mr-10 teacher_type">
+                                    <label class="radio-label">
+                                        <input type="radio" name="teacher_type" value="1" <?php if($info['teacher_type']==1){echo 'checked';} ?> > 用户老师
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="teacher_type" value="2" <?php if($info['teacher_type']==2){echo 'checked';} ?> > 平台老师
+                                    </label>
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i>必须选择</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">关联老师：</label>
+                                <div class="col-md-3">
+                                    <select class="form-control" name="teacher_id" id="teacher_id">
+                                        <option value="">选择老师</option>
+                                        {volist name="teachlist" id="tea"}
+                                        <option value="{$tea['id']}" <?php if($info['teacher_id']==$tea['id']){echo 'selected';} ?>>{$tea['username']}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择</div>
+                            </div>
+
+
+
+                            <!--<div class="form-group item_title">
+                                <label class="col-md-2 control-label">推荐：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="checkbox" name="flag[]" value="1" <?php if(in_array(1,explode(',',$info['flag']))){echo 'checked';} ?> > 首页推荐
+                                    </label>
+                                </div>
+                            </div>-->
+
+                            <div class="form-group item_image">
+                                <label for="image" class="col-md-2 control-label">列表缩略图：</label>
+                                <div class="col-md-8" style="padding-bottom: 5px;padding-left: 5px;">
+                                    {include file="ad/picture"/}
+                                </div>
+                            </div>
+
+                            <div class="form-group item_image">
+                                <label for="image" class="col-md-2 control-label">证书图片：</label>
+                                <div class="col-md-8" style="padding-bottom: 5px;padding-left: 5px;">
+                                    {include file="public/picture"/}
+                                </div>
+                            </div>
+
+                            <div class="form-group item_image">
+                                <label for="image" class="col-md-2 control-label">分享海报图片：</label>
+                                <div class="col-md-8" style="padding-bottom: 5px;padding-left: 5px;">
+                                    {include file="public/picturec"/}
+                                </div>
+                            </div>
+
+                            <div class="form-group item_image">
+                                <label for="image" class="col-md-2 control-label">轮播图：</label>
+                                <div class="col-md-8" style="padding-bottom: 5px;padding-left: 5px;">
+                                    {include file="ad/picture_arr"/}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab_content" style="display: none;">
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">课程简介：</label>
+                                <div class="col-md-8">
+                                    {:widget('common/editor/ueditor',[['id'=>'content','name'=>'content','value'=>$info['content']]])}
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-md-offset-2">
+                                <div class="col-md-3"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                            </div>
+                        </div>
+
+
+
+                         </fieldset>
+                  </form>
+
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script>
+$('select[name="position_id"]').change(function () {
+    var size = $(this).find('option:selected').attr('data-size');
+
+    if(size!=''){
+        $("#description").text('图片尺寸'+size);
+    }
+});
+
+$('.tab_list').click(function () {
+    var index = $(this).index();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.tab_content').eq(index).show().siblings('.tab_content').hide();
+});
+
+
+//切换分类
+$('#type1').change(function(){
+    var vals = $(this).val();
+    selectTypeTwo(vals,3,"#type2",'<option value="">二级分类</option>');
+});
+
+function selectTypeTwo(parent_id,level,select_list,str){
+    $.post("/admin/Course/son_type",{parent_id:parent_id,level:level}, function(result){
+        $(select_list).html(str+result['msg'])
+    });
+}
+
+
+
+$('.teacher_type .radio-label').click(function () {
+    var val = $(this).find("input[name='teacher_type']:checked").val();
+    commqie(val);
+});
+$('.teacher_type .iCheck-helper').click(function () {
+    var val = $(this).parent('div').find("input[name='teacher_type']:checked").val();
+    commqie(val);
+});
+function commqie(val){
+
+    $.post("{:url('get_teacher')}",{teacher_type:val},function (dd) {
+
+        var html = ' <option value="">选择老师</option>';
+        $.each(dd.data,function (n,value) {
+            html += '<option value="'+value.id+'">'+value.username+'</option>';
+        })
+        $("#teacher_id").html(html);
+    })
+
+}
+</script>
+
+
+{/block}

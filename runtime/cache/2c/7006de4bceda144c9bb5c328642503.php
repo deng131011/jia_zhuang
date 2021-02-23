@@ -1,0 +1,4 @@
+<?php
+//000000003600
+ exit();?>
+a:20:{s:3:"uid";i:1;s:8:"username";s:5:"admin";s:8:"password";s:32:"031c9ffc4b280d3e78c750163d07d275";s:8:"nickname";s:5:"admin";s:5:"email";s:13:"123123@qq.com";s:6:"mobile";s:0:"";s:6:"avatar";s:68:"http://cdn.eacoo.xin/attachment/static/assets/img/default-avatar.png";s:3:"sex";i:0;s:11:"description";s:0:"";s:9:"login_num";i:0;s:13:"last_login_ip";s:14:"192.168.31.114";s:15:"last_login_time";s:19:"2021-02-21 10:30:00";s:20:"activation_auth_sign";s:40:"582f8ac4e9aa2ab60ede87dba268da7649bd65ba";s:8:"bind_uid";i:1;s:11:"create_time";s:19:"2019-06-06 10:28:40";s:11:"update_time";s:19:"2019-08-02 09:50:03";s:6:"status";i:1;s:7:"urlRule";s:19:"admin/product/index";s:2:"ip";s:14:"192.168.16.191";s:10:"auth_group";a:1:{i:1;s:15:"超级管理员";}}

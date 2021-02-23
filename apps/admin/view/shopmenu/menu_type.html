@@ -1,0 +1,152 @@
+{include file="public/document_header" /}
+{block name="style"}
+<style>
+    .btn-xs{margin-bottom: 5px;}
+    tr td{padding:0 8px !important;}
+</style>
+{/block}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/libs/bootstrap-table/bootstrap-table.min.css">
+
+<!----- 搜索 ----->
+<section class="row-content pt-5">
+    <div class=" box-default">
+
+        <form id="search_form" action="" method="get">
+            <div class="box-body" id="eacoo-toolbar">
+                <div class="form-inline" role="form">
+
+                    <div class="form-group mt-10">
+                        <input type="text"  class="form-control" name="title" value="" placeholder="输入分类标题" style="width:300px;float: left;margin-right:5px;" />
+                        <input type="hidden" name="shop_id" value="{$get['shop_id']}" />
+                    </div>
+
+                    <div class="form-group mt-10">
+                        <button type="button" class="btn btn-success search-btn" id="search">添加</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="content pt-5">
+    <div class="box-body" style="background: #fff;">
+        <div class="builder listbuilder-box">
+            <!-- 顶部工具栏按钮 -->
+            <!-- 数据列表 -->
+            <div class="builder-container">
+                <div class="row">
+
+                    <div class="builder-table col-sm-12">
+                        <div class="bootstrap-table">
+
+
+                                <div class="fixed-table-container fixed_table_list" style="padding-bottom: 0px;">
+                                    <div class="fixed-table-header" ></div>
+                                    <form id="form_5">
+                                    <table id="builder-table" class="table table-responsive table-bordered table-hover dataTable" data-pagination="true" data-toolbar="#builder-toolbar" data-query-params="queryParams" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th style="width:5%;">
+                                                <div class="th-inner sortable">ID号</div>
+                                            </th>
+                                            <th style="width:10%;">
+                                                <div class="th-inner sortable">分类标题</div>
+                                            </th>
+                                            <th style="width:5%;">
+                                                <div class="th-inner sortable">排序</div>
+                                            </th>
+                                            <th style="width:5%;">
+                                                <div class="th-inner sortable">操作</div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody id="list_main">
+                                        {volist name="list" id="vos"}
+                                        <tr data-id="{$vos['id']}">
+                                            <td style="width:5%;">
+                                                <div class="th-inner sortable">{$vos['id']}</div>
+                                            </td>
+                                            <td style="width:10%;">
+                                                <div class="th-inner sortable">
+                                                    <input class="form-control write_szm" data-type="1" type="text" value="{$vos['title']}" style="width:100%;" />
+                                                </div>
+                                            </td>
+                                            <td style="width:5%;">
+                                                <div class="th-inner sortable">
+                                                    <input class="form-control write_szm" data-type="2" type="text" value="{$vos['sort']}" style="width:50px" />
+                                                </div>
+                                            </td>
+                                            <td style="width:5%;">
+                                                <div class="th-inner sortable"> <div title="删除" icon="fa fa-remove" class="btn btn-danger btn-xs" onclick="btn_delete({$vos['shop_id']},{$vos['id']})" style="margin-right:6px;margin-top: 5px;"><i class="fa fa-remove"></i> </div></div>
+                                            </td>
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+
+                                    </table>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="__LIBS__/layer/layer.js"></script>
+<script type="text/javascript">
+    //搜索
+   $("#search").click(function () {
+       var index = layer.load(1, {
+           shade: [0.4,'#000'] //0.1透明度的白色背景
+       });
+       $.post("{:url('')}",$("#search_form").serialize(),function (dd) {
+           layer.close(index);
+           if(dd.code==200){
+               layer.msg(dd.msg,{time:1500});
+               setTimeout(function () {
+                   window.location.reload()
+               },1500)
+           }else{
+               layer.msg(dd.msg);
+           }
+       })
+   });
+
+   //删除
+    function btn_delete(shop_id,id){
+        $.post("{:url('delete_type')}",{shop_id:shop_id,ids:id},function (dd) {
+            if(dd.code==200){
+                layer.msg(dd.msg,{time:1500});
+                setTimeout(function () {
+                    window.location.reload()
+                },1500)
+            }else{
+                layer.msg(dd.msg);
+            }
+        })
+    }
+
+
+    $(".write_szm").blur(function () {
+        var id  = $(this).parents('tr').attr("data-id");
+        var type = $(this).attr("data-type"); //1标题，2排序
+        var val = $(this).val();
+        $.post("{:url('')}",{id:id,type:type,val:val},function (dd) {
+            layer.msg(dd.msg);
+        });
+    });
+
+</script>
+
+{/block}

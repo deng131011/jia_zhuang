@@ -1,0 +1,46 @@
+  {extend name="$_admin_public_base_"/}
+  {block name="style"}
+
+  {/block}
+
+  {block name="main"}
+  <section class="content pt-5">
+   <table class="table table-bordered">
+	    <tbody>
+	    <tr>
+	      <th>ID</th>
+	      <td>{$info.id}</td>
+	    </tr>
+	    <tr>
+	      <th>执行者</th>
+	      <td>{$info.nickname}</td>
+	    </tr>
+	    <tr>
+	      <th>行为名称</th>
+	      <td>{$info.title}</td>
+	    </tr>
+	    <tr>
+	      <th>行为标识</th>
+	      <td>{$info.name}</td>
+	    </tr>
+	    <tr>
+	      <th>行为ip</th>
+	      <td>{$info.ip},所在地理位置：{$info.ip_city|default="未知"}</td>
+	    </tr>
+	    <tr>
+	      <th>日志备注</th>
+	      <td>{$info.remark}</td>
+	    </tr>
+	    <tr>
+	      <th>执行时间</th>
+	      <td>{$info.create_time}</td>
+	    </tr>
+	  </tbody></table>
+</section>
+{/block}
+
+{block name="script"}
+<script type="text/javascript">
+
+</script>
+{/block}

@@ -1,0 +1,658 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<script type="text/javascript" src="/static/home/layui/layui.all.js"></script>
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+            <div class="cf eacoo-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="tab_list active"><a href="javascript:;">基本信息</a></li>
+                    <li class="tab_list"><a href="javascript:;">其他信息</a></li>
+                    <li class="tab_list"><a href="javascript:;">规格信息</a></li>
+                </ul>
+            </div>
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">
+                <div class="col-md-11">
+                  <form action="{:url('')}" method="post" class="form-builder form-horizontal">
+                    <fieldset>
+                      <input type="hidden" name="id" value="{$info.id}">
+
+                        <div class="tab_content">
+					    <div class="form-group item_title">
+							<label class="col-md-2 control-label">产品名称：</label>
+							<div class="col-md-4">
+							  <input type="text" class="form-control" name="title" placeholder="产品名称" value="{$info.title|default=''}" >
+							</div>
+						  <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须填写</div>
+					    </div>
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">商品描述：</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="brief" placeholder="描述" value="{$info.brief|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 商品简单描述</div>
+                        </div>
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">产品分类：</label>
+                            <div class="col-md-2">
+                                <select class="form-control" name="type3">
+                                    <option value="">请选择分类</option>
+                                    {volist name="typelist" id="pro"}
+                                    <option value="{$pro['id']}" <?php if($info['type3']==$pro['id']){echo 'selected';} ?>>{$pro['title_show']}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择,只能选择第三级</div>
+                        </div>
+
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">发货地：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="city" placeholder="填写城市名称" value="{$info.city|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">排序：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="sort" placeholder="排序" value="{$info.sort|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">展示价格：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="price" placeholder="展示价格" value="{$info.price|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">展示原价：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="original_price" placeholder="展示价格" value="{$info.original_price|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">浏览量：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="look_num" placeholder="浏览量" value="{$info.look_num|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">销量：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="sale_num" placeholder="销量" value="{$info.sale_num|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">运费：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="express" placeholder="运费" value="{$info.express|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">库存：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="stock" placeholder="库存" value="{$info.stock|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+
+
+                            <div class="form-group item_title">
+                            <label class="col-md-2 control-label">上架状态：</label>
+                            <div class="radio radio-primary fl mr-10">
+                                <label class="radio-label">
+                                    <input type="radio" name="status" value="1" <?php if($info['status']==1 || empty($info)){echo 'checked';} ?> > 已上架
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="status" value="2" <?php if($info['status']==2){echo 'checked';} ?> > 已下架
+                                </label>
+
+                            </div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">推荐状态：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label">
+                                        <input type="checkbox" name="flag[]" value="1" <?php if(in_array(1,explode(',',$info['flag']))){echo 'checked';} ?> > 热门推荐
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="checkbox" name="flag[]" value="2" <?php if(in_array(2,explode(',',$info['flag']))){echo 'checked';} ?> > 精选推荐
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="checkbox" name="flag[]" value="3" <?php if(in_array(3,explode(',',$info['flag']))){echo 'checked';} ?> > 活动页推荐
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <!--视频-->
+                            <div class="form-group item_void_ids ">
+                                <label for="void_ids" class="col-md-2 control-label">视频（建议大小100M以下）</label>
+                                <div class="col-md-4">
+                                    <div class="input-group">
+                                        <input class="attach form-control" type="text" id="void_ids" name="video" value="{$info.video|default=''}"/>
+                                        <span class="input-group-btn">
+                                                    <button type="button" id="upload_file_void_ids" class="btn btn-info btn-sm">
+                                                        <i class="fa fa-upload"></i> 选择文件</button>
+                                                </span>
+
+                                    </div>
+                                    <link href="/static/libs/webuploader/css/webuploader.css" type="text/css" rel="stylesheet">
+                                    <script type="text/javascript" charset="utf-8" src="/static/libs/webuploader/js/webuploader.min.js"></script>
+                                    <script>
+                                        //本地上传(分开写为了好控制)
+                                        $(function () {
+                                            var uploader_void_ids = WebUploader.create({
+                                                // 选完文件后，是否自动上传。
+                                                auto: true,
+                                                duplicate: true,// 同一文件是否可以重复上传
+                                                // swf文件路径
+                                                swf: '/static/assets/libs/webuploader/Uploader.swf',
+                                                // 文件接收服务端。
+                                                server: "/admin.php?s=/admin/upload/upload/path_type/attachment/type/file/is_sql/close.html",
+                                                //验证文件总数量, 超出则不允许加入队列
+                                                fileNumLimit: 5,
+                                                // 如果此选项为false, 则图片在上传前不进行压缩
+                                                compress: false,
+                                                // 验证单个文件大小是否超出限制, 超出则不允许加入队列
+                                                fileSingleSizeLimit: 2516582400,
+                                                // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+
+                                                //选择文件的按钮
+                                                pick: '#upload_file_void_ids',
+                                                // 只允许选择图片文件
+                                                accept: {
+                                                    title: 'File',
+                                                    extensions: 'doc,docx,xls,xlsx,ppt,pptx,pdf,wps,txt,zip,rar,gz,bz2,7z,mp3,mp4,avi,apk',
+                                                    mimeTypes: ''
+                                                }
+                                            });
+                                            uploader_void_ids.on('fileQueued', function (file) {
+                                                uploader_void_ids.upload();
+                                            });
+                                            /*上传成功**/
+                                            uploader_void_ids.on('uploadSuccess', function (file, result) {
+                                                if (result.code == 1) {
+                                                    data = result.data;
+                                                    $("#void_ids").val(data.path);
+                                                    uploader_void_ids.reset();
+                                                } else {
+                                                    updateAlert(result.msg);
+                                                    setTimeout(function () {
+                                                        $(this).removeClass('disabled').prop('disabled', false);
+                                                    }, 1500);
+                                                }
+                                            });
+                                        })
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="form-group item_image">
+                                <label for="image" class="col-md-2 control-label">商品缩率图：</label>
+                                {include file="ad/picture"/}
+                            </div>
+
+                            <div class="form-group item_image">
+                                <label for="image" class="col-md-2 control-label">商品轮播图：</label>
+                                <div class="col-md-8" style="padding-bottom: 5px;padding-left: 5px;">
+                                {include file="ad/picture_arr"/}
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="tab_content" style="display: none;">
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">拼团开关：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label typelist">
+                                        <input type="radio" name="team_open" value="2" <?php if($info['team_open']==2 || empty($info)){echo 'checked';} ?> > 关闭拼团
+                                    </label>
+                                    <label class="radio-label typelist">
+                                        <input type="radio" name="team_open" value="1" <?php if($info['team_open']==1){echo 'checked';} ?> > 开启拼团
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">拼团价格：</label>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="team_price" placeholder="拼团价格" value="{$info.team_price|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 拼团则用此价格</div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">拼团条件设置：</label>
+                                <div class="radio radio-primary fl mr-10">
+                                    <label class="radio-label typelist">
+                                        <input type="radio" name="condition_system" value="1" <?php if($info['condition_system']==1 || empty($info)){echo 'checked';} ?> > 以数量达标为准
+                                    </label>
+                                    <label class="radio-label typelist">
+                                        <input type="radio" name="condition_system" value="2" <?php if($info['condition_system']==2){echo 'checked';} ?> > 以人数达标为准
+                                    </label>
+                                </div>
+                                <div class="col-md-2" style="width: 110px;">
+                                    <input type="number" style="width: 80px;" class="form-control" name="team_num" placeholder="数量" value="{$info.team_num|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 参团达成条件设置</div>
+                            </div>
+
+
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">商品详情：</label>
+                                <div class="col-md-8">
+
+                                    <!--{:widget('common/editor/ueditor',array('id'=>'','name'=>'content','value'=>$info['content']))}-->
+                                    {include file="public:ueditor"}
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!--规格类别-->
+                        <div class="tab_content" style="display: none;">
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">规格类别：</label>
+                                <div class="col-md-4">
+                                    <select class="form-control product_spec_select" name="product_spec">
+                                        <option value="0">规格类别</option>
+                                        {volist name="spec_type" id="pro"} {if condition="$pro.id neq 9"}
+                                        <option data-type="{$pro.type}" value="{$pro.id}" data-have_picture="{$pro.have_picture}">{$pro.title}</option>
+                                        {/if} {/volist} </select>
+                                </div>
+                            </div>
+                            <div class="have-set-spec" {notempty name="product_spec"}style="border-bottom:1px solid #eee;margin-bottom:10px;"{/notempty}>
+                            {volist name="product_spec" id="psvo"}
+                            <div class="form-group item_title cut_add_parent">
+                                <input type="hidden" class="hide_product_spec_id" name="hide_product_spec_id[]" value="{$psvo.id}">
+                                <label class="col-md-2 control-label">规格参数：</label>
+                                <div class="col-md-10" style="display: flex">
+                                    <div style="display: flex;margin-right:10px">
+                                        <div style="padding-top: 7px">{$spec[$psvo['typeid']]}名称：</div>
+                                        <div>
+                                            <input type="text" class="form-control" name="title_have_set{$psvo.id}[]" placeholder="规格名称" value="{$psvo.title}">
+                                        </div>
+                                    </div>
+
+                                    {eq name="spec2[$psvo['typeid']]" value="1" }
+                                    <div style="display: flex">
+                                        <div style="padding-top: 7px">{$spec[$psvo['typeid']]}价格：</div>
+                                        <div>
+                                            <input type="text" class="form-control" name="price_have_set{$psvo.id}[]" placeholder="规格价格" value="{$psvo.price}">
+                                        </div>
+										
+										<div style="padding-top: 7px; margin-left:10px;">{$spec[$psvo['typeid']]}库存：</div>
+                                        <div>
+                                            <input type="text" class="form-control" name="stock_have_set{$psvo.id}[]" placeholder="库存" value="{$psvo.stock}">
+                                        </div>
+                                    </div>
+                                    {/eq}
+
+                                    {notempty name="$psvo['icon']"}
+                                    <div style="display: flex">
+                                        <div style="padding-top: 7px">{$spec[$psvo['typeid']]}图片：</div>
+                                        <div style="display: flex">
+                                            <input type="text" class="form-control picture_url"   value="{:modelField($psvo['icon'],'attachment','path')}"/>
+                                            <input type="text" class="form-control picture_icon" name="picture_have_set{$psvo.id}[]" value="$psvo['icon']" style="display:none;">
+                                            <button class="btn btn-block btn-primary pictureBtn" id="pre{$psvo['id']}" data-id="{$psvo['id']}" type="button">上传图片</button>
+                                        </div>
+                                    </div>
+                                    {/notempty}
+                                    <div>
+                                        <a class="btn btn-danger btn-xs cut_add" href="javascript:;" style="margin:6px 0 0 6px;" data-id="{$psvo.id}">
+                                            <i class="fa fa-remove"></i> </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {/volist}
+                        </div>
+
+
+                        <div class="temp"></div>
+                        <div class="add"></div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-md-offset-2">
+
+                                <div class="col-md-3 add_spec" style="display: none">
+                                    <button class="btn btn-block btn-primary" type="button">增加规格</button>
+                                </div>
+                                <div class="col-md-3"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                            </div>
+                        </div>
+
+
+                         </fieldset>
+                  </form>
+
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script>
+$('select[name="position_id"]').change(function () {
+    var size = $(this).find('option:selected').attr('data-size');
+
+    if(size!=''){
+        $("#description").text('图片尺寸'+size);
+    }
+});
+
+
+$('.tab_list').click(function () {
+    var index = $(this).index();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.tab_content').eq(index).show().siblings('.tab_content').hide();
+});
+
+</script>
+
+
+<script>
+    $(function () {
+        btn_picture();
+    })
+    function btn_picture(){
+        $('.pictureBtn').each(function(){
+            var btn = $(this);
+            var btn_this = this;
+        layui.use('upload', function(){
+            var upload = layui.upload;
+            var url = "{:url('admin/upload/upload')}";
+
+            
+              
+              
+              upload.render({
+                elem: btn_this
+                ,url: url //上传接口
+                ,accept: 'images'
+                ,multiple: true
+                ,done: function(res){
+
+                var dat=res.data;
+
+                  if(res.code == 1){
+
+                        btn.siblings('.picture_url').val(dat.path);
+                        btn.siblings('.picture_icon').val(dat.id);
+
+                        layer.msg('上传成功')
+                    }else{
+                        layer.msg(res.msg);
+                    }
+                }
+              });
+            
+        });
+        $('.layui-upload-file').hide();
+        });
+    }
+    function set_picture(elm){
+        console.log(elm);
+        layui.use('upload', function(){
+            var upload = layui.upload;
+            var url = "{:url('admin/upload/upload')}";
+            var uploadInst =   upload.render({
+                elem: elm
+                ,url: url //上传接口
+                ,accept: 'images'
+                ,multiple: true
+                ,done: function(res){
+
+                var dat=res.data;
+
+                  if(res.code == 1){
+
+                        $(elm).siblings('.picture_url').val(dat.path);
+                        $(elm).siblings('.picture_icon').val(dat.id);
+
+                        layer.msg('上传成功')
+                    }else{
+                        layer.msg(res.msg);
+                    }
+                }
+              });
+        });
+        $('.layui-upload-file').hide();
+    }
+    function return_html(id, word,type,have_picture=2,last_id=0) {
+        let price_html = '';
+        let prcture_html='';
+        if (type == 1) {
+            price_html = `<div style="display: flex">
+                    <div style="padding-top: 7px">` + word + `价格：</div>
+                    <div><input type="text" class="form-control" name="price_` + id + `[]" placeholder="价格" value=""></div>
+					<div style="padding-top: 7px; margin-left:10px;">` + word + `库存：</div>
+                    <div><input type="text" class="form-control" name="stock_` + id + `[]" placeholder="库存" value=""></div>
+                </div>`;
+        }
+        if (have_picture == 1) {
+            
+
+            prcture_html = `<div style="display: flex">
+                    <div style="padding-top: 7px">` + word + `图片：</div>
+                    <div style="display:flex;">
+                        <input type="text" class="form-control picture_url"   value=""/>
+                        <input type="text" class="form-control picture_icon" name="picture_` + id + `[]" value="" style="display:none;">
+                        <button class="btn btn-block btn-primary pictureBtn" id="pre`+last_id+`" data-id="`+last_id+`" type="button">上传图片</button></div>
+                </div>`;
+            
+
+
+
+
+        }
+        let add =
+            `<div class="form-group item_title cut_add_parent">
+            <label class="col-md-2 control-label">规格参数：</label>
+            <div class="col-md-10" style="display: flex">
+                <div style="display: flex;margin-right:10px">
+                    <div style="padding-top: 7px">` + word + `名称：</div>
+                    <div><input type="text" class="form-control" name="title_` + id + `[]" placeholder="名称" value=""></div>
+                </div>
+                `+ price_html+` `+prcture_html+`
+
+                <div>
+                     <a class="btn btn-danger btn-xs cut_add"  icon="fa fa-remove" href="javascript:;" style="margin:6px 0 0 6px;"><i class="fa fa-remove"></i></a>
+                </div>
+            </div>
+        </div>`;
+
+        return add;
+    }
+
+    $('select[name="position_id"]').change(function () {
+        var size = $(this).find('option:selected').attr('data-size');
+
+        if (size != '') {
+            $("#description").text('图片尺寸' + size);
+        }
+    });
+
+
+    $("select[name=type3]").change(function () {
+        var val = $("select[name=type3]").val();
+        if (parseInt(val) == 1) {
+
+            $(".attribute_list").show();
+
+        } else {
+            $(".attribute_list").hide();
+        }
+
+        ajaxProtype2(1);
+    });
+    $("select[name=type2]").change(function () {
+        ajaxProtype3(1);
+    });
+
+    $('.tab_list').click(function () {
+        var index = $(this).index();
+
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.tab_content').eq(index).show().siblings('.tab_content').hide();
+        if (index == 2) {
+            $('.add_spec').show();
+        } else {
+            $('.add_spec').hide();
+        }
+
+    });
+
+
+    $(".product_spec_select").change(function () {
+        let id = $(this).val();
+        if (id) {
+            let selector_parcel = '.get_temp_parcel_' + id;
+            if ($(selector_parcel).length == 0) {
+                let selector = 'option[value=' + id + ']';
+                let type = $(".product_spec_select").find(selector).attr("data-type");
+                let word = $(".product_spec_select").find(selector).html();
+                $.post('/admin.php?s=/admin/product/get_temp', {id: id}, function (res) {
+                    if (res.code == 200) {
+                        let html = '<div class="get_temp_parcel_' + id + '" style="border-bottom: 1px solid #eee;margin-bottom: 10px">';
+                        let list = res.data;
+                        $.each(list, function (index, item) {
+                            var price_html = "";
+                            if (type == 1) {
+                                price_html = `<div style="display: flex">
+                                    <div style="padding-top: 7px">`+ word +`价格：</div>
+                                    <div>
+                                        <input type="text" class="form-control"
+                                        name="price_` + id + `[]" placeholder="规格价格"
+                                        value="` + item.spec_price + `"></div>
+                                    </div>`;
+                            }
+
+                            html += `<div class="form-group item_title cut_add_parent">
+                                        <label class="col-md-2 control-label">规格参数：</label>
+                                        <div class="col-md-10" style="display: flex">
+                                            <div style="display: flex;margin-right:10px">
+                                                <div style="padding-top: 7px">` + word + `名称：</div>
+                                                <div><input type="text" class="form-control" name="title_` + id + `[]" placeholder="规格名称" value="` + item.spec_name + `"></div>
+                                            </div>
+                                            `+price_html +`
+                                            <div>
+                                                <a class="btn btn-danger btn-xs cut_add"  icon="fa fa-remove" href="javascript:;" style="margin:6px 0 0 6px;">
+                                                <i class="fa fa-remove"></i></a>
+                                            </div>
+                                        </div>
+                            </div>`;
+
+                        })
+                        html += '</div>';
+                        $('.temp').append(html);
+                    }
+                }, 'json')
+            }
+        }
+        //specTypeShow();
+    });
+    $('body').on('click','.add_spec',function () {
+        let spec_select_type = $(".product_spec_select").val();
+        if (spec_select_type == 0) {
+            layer.msg('请先选择规格类型');
+            return false;
+        }
+        if($('.pictureBtn').length>0){
+            var last_id=parseInt($('.pictureBtn').eq($('.pictureBtn').length-1).attr('data-id'))+1;
+        }else{
+            var last_id=0;
+        }
+        let selector = 'option[value=' + spec_select_type + ']';
+        let word = $(".product_spec_select").find(selector).html();
+        let type = $(".product_spec_select").find(selector).attr("data-type");
+        let have_picture = $(".product_spec_select").find(selector).attr("data-have_picture");
+
+
+
+        let re_html = return_html(spec_select_type, word,type,have_picture,last_id);
+        let parcel = '.get_temp_parcel_' + spec_select_type;
+
+        if ($(parcel).length > 0) {
+            $(parcel).append(re_html);
+        } else {
+            $('.add').append(re_html)
+        }
+
+        var elemet='#pre'+last_id;
+        set_picture(elemet);
+        if ($('.add').children('.cut_add_parent').length > 0) {
+            $('.add').css({'border-top': '1px solid #fff'});
+        }    
+
+        
+        //$('.add').append(add);
+    })
+    $('body').on('click', '.cut_add', function () {
+        const that = $(this);
+        let get_temp_parent = $(this).closest('.cut_add_parent').parent();
+        let id = $(this).data('id');
+        if (id){
+            $.post('/admin.php?s=/admin/product/del_product_spec', {id:id},
+                function(res){
+                    if (res.code==200){
+                        that.closest('.cut_add_parent').remove()
+                    }
+                },
+                'json');
+        }
+        $(this).closest('.cut_add_parent').remove();
+        let children = get_temp_parent.children('.cut_add_parent');
+        if (children.length == 0) {
+            get_temp_parent.css({'border': '1px solid #fff', 'margin-bottom': '0px'});
+        }
+    })
+</script>
+
+<script>
+    layui.use(['form'], function(args){
+        var form = layui.form;
+    });
+</script>
+
+
+{/block}

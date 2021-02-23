@@ -1,0 +1,2 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:44:"../apps/common/view/builder/Fields/text.html";i:1556705925;}*/ ?>
+<input type="text" class="form-control" name="<?php echo $field['name']; ?>" value="<?php if(isset($field['value'])): ?><?php echo htmlspecialchars($field['value']); endif; ?>" <?php echo (isset($field['extra_attr']) && ($field['extra_attr'] !== '')?$field['extra_attr']:''); ?>>

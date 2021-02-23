@@ -1,0 +1,174 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">    
+
+                <div class="col-md-11">
+                  <form action="" method="post" class="form-builder form-horizontal">
+                    <fieldset>
+
+                      <input type="hidden" name="id" value="{$info.id}">
+
+					    <div class="form-group item_title">
+							<label for="title" class="col-md-2 control-label">优惠券名称：</label>
+							<div class="col-md-4">
+							  <input type="text" class="form-control" name="title" placeholder="优惠券名称" value="{$info.title|default=''}" >
+							</div>
+						  <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须填写</div>
+					    </div>
+
+                    
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">优惠券类型：</label>
+                            <div class="radio radio-primary fl mr-10">
+                                <label class="radio-label">
+                                    <input type="radio" name="type" value="2" <?php if($info['type']==2 || empty($info['type'])){echo 'checked';} ?> > 满折优惠券
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="type" value="3" <?php if($info['type']==3){echo 'checked';} ?> > 满减优惠券
+                                </label>
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择</div>
+                        </div>
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label man_zhe">满折设置：</label>
+                            <div class="col-md-1">
+                                <input type="number" class="form-control" name="manzu" placeholder="满" value="{$info.manzu|default=''}" >
+                            </div>
+                            <div style="float: left; margin-top: 5px;">—</div>
+                            <div class="col-md-1">
+
+                                <input type="number" class="form-control val_a" name="val" placeholder="折" value="{$info.val|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 请正确填写，例：9折请填0.9</div>
+                        </div>
+						
+						
+						<div class="form-group item_title">
+                            <label class="col-md-2 control-label">领取途径：</label>
+                            <div class="radio radio-primary fl mr-10">
+							
+							    {volist name='get_type' id="gett" key='kk'}
+                                   {if condition="$gett['open'] eq 1"}
+                                    <label class="radio-label">
+                                        <input type="radio" name="get_type" value="{$gett['id']}" <?php if($info['get_type']==$gett['id']&&!empty($info)){echo 'checked';}else if($kk==1){echo 'checked';} ?> > {$gett['title']}
+                                    </label>
+                                    {/if}
+								{/volist}
+                                
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择</div>
+                        </div>
+
+                        <div class="form-group item_title coupon_score">
+                            <label class="col-md-2 control-label">所需积分：</label>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" name="score" placeholder="积分" value="{$info.score|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 积分兑换才需填，不填默认为0</div>
+                        </div>
+
+                        {if condition="empty($info['id'])"}
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">优惠券数量：</label>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" name="num" placeholder="发布数量" value="{$info.num|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须正确填写，提交后不能修改</div>
+                        </div>
+						{/if}
+						
+						<div class="form-group item_title">
+                            <label class="col-md-2 control-label">生效日期：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control times" name="start_time" placeholder="开始日期" value="{$info.start_time|default=''}" >
+                            </div>
+                            <div style="float: left; margin-top: 5px;">—</div>
+                            <div class="col-md-2">
+
+                                <input type="text" class="form-control times" name="end_time" placeholder="结束日期" value="{$info.end_time|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 请正确填写开始-结束日期</div>
+                        </div>
+
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">排序：</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="sort" placeholder="排序" value="{$info.sort|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"></div>
+                        </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 col-md-offset-2">
+                                  <div class="col-md-3"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                  <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                              </div>
+                          </div>
+
+                         </fieldset>
+                  </form>
+
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script>
+$('select[name="position_id"]').change(function () {
+    var size = $(this).find('option:selected').attr('data-size');
+
+    if(size!=''){
+        $("#description").text('图片尺寸'+size);
+    }
+});
+
+$('.radio-label').click(function () {
+    var val = $(this).find("input[name='type']:checked").val()
+    if(val==3){
+	   $(".man_zhe").text('满减设置：');
+	   $(".val_a").attr('placeholder','减');
+	}else{
+	   $(".man_zhe").text('满折设置：');
+	   $(".val_a").attr('placeholder','折');
+	}
+});
+$('.radio-label').click(function () {
+    var val = $(this).find("input[name='get_type']:checked").val()
+    if(val==3){
+        $(".coupon_score").show();
+    }else{
+        $(".coupon_score").hide();
+    }
+});
+
+</script>
+<link href="__LIBS__/datetimepicker/datetimepicker.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__LIBS__/datetimepicker/datetimepicker.min.js"></script>
+<script type="text/javascript">
+    $('.times').datetimepicker({
+            format      : 'yyyy-mm-dd',
+            autoclose   : true,
+            todayBtn    : 'linked',
+            language    : 'zh-CN',
+            fontAwesome : true,
+			minView : 2
+        });
+</script>
+
+
+
+
+{/block}

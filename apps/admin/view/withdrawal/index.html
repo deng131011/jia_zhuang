@@ -1,0 +1,163 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/libs/bootstrap-table/bootstrap-table.min.css">
+
+<!----- 搜索 ----->
+<section class="row-content pt-5">
+    <div class="box box-default">
+        <div class="box-header with-border pb-0">
+            <h3 class="box-title">高级查询</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <form id="search_form" action="{:url('')}" method="get">
+        <div class="box-body" id="eacoo-toolbar">
+            <div class="form-inline" role="form">
+                <div class="form-group mt-10">
+                    <select name="dk_status" class="form-control">
+                        <option value="">请选择 </option>
+                        <option value="1" <?php if($get['dk_status']==1){echo 'selected';} ?>>未打款</option>
+                        <option value="3" <?php if($get['dk_status']==3){echo 'selected';} ?>>已打款</option>
+                    </select>
+                </div>
+                <div class="form-group mt-10">
+                    <input type="text" id="{$field.id}" class="form-control" name="{$field.name}" value="" placeholder="时间区间查询">
+                    <!--<input type="text" class="form-control" name="keywords" value="{$get['keywords']}" placeholder="请输入查询关键字">-->
+                </div>
+                <div class="form-group mt-10">
+                    <button type="button" class="btn btn-success search-btn" id="search">查询</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</section>
+
+<section class="content pt-5">
+        <div class="box-body" style="background: #fff;">
+            <div class="builder listbuilder-box">
+                <!-- 顶部工具栏按钮 -->
+                <!-- 数据列表 -->
+                <div class="builder-container">
+                    <div class="row">
+
+                        <div class="builder-table col-sm-12">
+                        <div class="bootstrap-table">
+                                <div class="fixed-table-toolbar"><div class="bs-bars pull-left">
+                                    <div id="builder-toolbar" class="toolbar">
+                                    <!-- 工具栏按钮 -->
+                                    <!--<div class="form-group">-->
+
+                                    <!-- </div>-->
+                                    </div>
+                                </div>
+
+                                <div class="fixed-table-container fixed_table_list" style="padding-bottom: 0px;">
+                                    <div class="fixed-table-header" ></div>
+                                    <table id="builder-table" class="table table-responsive table-bordered table-hover dataTable" data-pagination="true" data-toolbar="#builder-toolbar" data-query-params="queryParams" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" width="100%">
+                                        <thead>
+                                        <tr>
+
+                                            <th style="" >
+                                                <div class="th-inner sortable both">ID编号</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">提现单号</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+
+                                            <th style="" >
+                                                <div class="th-inner sortable both">提现用户</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">银行卡姓名</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">银行卡号</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="">
+                                                <div class="th-inner sortable both">提现金额</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">申请时间</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" data-field="status">
+                                                <div class="th-inner sortable both">提现状态</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" data-field="status">
+                                                <div class="th-inner sortable both">打款时间</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" data-field="right_button">
+                                                <div class="th-inner sortable both">操作</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name="list" id="vo"}
+                                        <tr data-index="{$key}" data-uniqueid="{$vo['id']}">
+
+                                            <td style="">{$vo['id']}</td>
+                                            <td style="">{$vo['order_number']}</td>
+                                            <td style="">{$vo['username']|default='--'}</td>
+                                            <td style="">{$vo['bank_username']}</td>
+                                            <td style="">{$vo['bank_number']}</td>
+                                            <td style="">{$vo['tx_price']}</td>
+                                            <td style="">{$vo['create_time']|mydate}</td>
+                                            <td style="">{$vo['status_title']}</td>
+                                            <td style="">{notempty name="vo['dk_time']"}{$vo['dk_time']|mydate}{else}--{/notempty}</td>
+                                            <td style="">
+
+                                                {if condition="$vo['dk_status'] eq 1"}
+                                                    <a class="btn btn-success btn-xs ajax-get confirm" href="{:url('sure_forprice',array('id'=>$vo['id'],'ordernum'=>$vo['order_number']))}" confirm-info="您确定已打款了吗？" >已打款</a>
+                                                {/if}
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="fixed-table-pagination" style="display: block;">
+                                    <div class="pull-left pagination-detail">
+                                        <span class="pagination-info">总共 {$list->total()} 条记录</span>
+                                    </div>
+                                    <div class="pull-right pagination">
+                                        {$list->render()}
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="/static/home/layui/css/layui.css">
+<script src="/static/home/layui/layui.all.js" charset="utf-8"></script>
+<script>
+    var $table = $('#builder-table');
+
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //国际版
+        laydate.render({
+            elem: '#dates'
+            ,range: '/'
+        });
+    });
+</script>
+
+{/block}

@@ -1,0 +1,220 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/libs/bootstrap-table/bootstrap-table.min.css">
+
+<!----- 搜索 ----->
+<section class="row-content pt-5">
+    <div class="box box-default">
+        <div class="box-header with-border pb-0">
+            <h3 class="box-title">高级查询</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <form id="search_form" action="{:url('')}" method="get">
+        <div class="box-body" id="eacoo-toolbar">
+            <div class="form-inline" role="form">
+                <div class="form-group mt-10">
+                    <select name="after_status" class="form-control">
+                        <option value="">请选择 </option>
+                        <option value="1" <?php if($get['after_status']==1){echo 'selected';} ?>>未审核 </option>
+                        <option value="2" <?php if($get['after_status']==2){echo 'selected';} ?>>已同意退款 </option>
+                        <option value="3" <?php if($get['after_status']==3){echo 'selected';} ?>>未同意退款 </option>
+                        <option value="4" <?php if($get['after_status']==4){echo 'selected';} ?>>快递已寄出 </option>
+                    </select>
+                </div>
+                <div class="form-group mt-10">
+                    <input type="text" id="dates" class="form-control" name="dates" value="{$get['dates']}" placeholder="时间区间查询" readonly />
+                    <!--<input type="text" class="form-control" name="keywords" value="{$get['keywords']}" placeholder="请输入查询关键字">-->
+                </div>
+                <div class="form-group mt-10">
+                    <button type="button" class="btn btn-success search-btn" id="search">查询</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</section>
+
+<section class="content pt-5">
+        <div class="box-body" style="background: #fff;">
+            <div class="builder listbuilder-box">
+                <!-- 顶部工具栏按钮 -->
+                <!-- 数据列表 -->
+                <div class="builder-container">
+                    <div class="row">
+
+                        <div class="builder-table col-sm-12">
+                        <div class="bootstrap-table">
+                                <div class="fixed-table-toolbar"><div class="bs-bars pull-left">
+                                    <div id="builder-toolbar" class="toolbar">
+                                    <!-- 工具栏按钮 -->
+                                    <!--<div class="form-group">-->
+
+                                    <!-- </div>-->
+                                    </div>
+                                </div>
+
+                                <div class="fixed-table-container fixed_table_list" style="padding-bottom: 0px;">
+                                    <div class="fixed-table-header" ></div>
+                                    <table id="builder-table" class="table table-responsive table-bordered table-hover dataTable" data-pagination="true" data-toolbar="#builder-toolbar" data-query-params="queryParams" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" width="100%">
+                                        <thead>
+                                        <tr>
+
+                                            <th style="" >
+                                                <div class="th-inner sortable both">ID编号</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">商品订单</div>
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">申请类型</div>
+                                            </th>
+                                            <th style="">
+                                                <div class="th-inner sortable both">用户</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">售后商品</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">支付金额</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">运费金额</div>
+                                            </th>
+                                            <th style="" >
+                                                <div class="th-inner sortable both">实际退回</div>
+                                            </th>
+
+                                            <th style="" >
+                                                <div class="th-inner sortable both">提交时间</div>
+                                            </th>
+                                            <th style="" data-field="status">
+                                                <div class="th-inner sortable both">售后状态</div>
+                                            </th>
+                                            <th style="" data-field="status">
+                                                <div class="th-inner sortable both">状态</div>
+                                            </th>
+                                            <th style="" data-field="right_button">
+                                                <div class="th-inner sortable both">操作</div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {volist name="list" id="vo"}
+                                        <tr data-index="{$key}" data-uniqueid="{$vo['id']}">
+
+                                            <td style="">{$vo['id']}</td>
+                                            <td style=""><a href="{:url('Orders/details',array('order_id'=>$vo['order_id']))}" style="color: #00a65a;">{$vo['order_number']}</a></td>
+                                            <td style="">{if condition="$vo['apply_type'] eq 1"}仅退款{else/}退款退货{/if}</td>
+                                            <td style="">{$vo['username']|default='--'}</td>
+                                            <td style=""><p>{$vo['product']}</p> </td>
+                                            <td style="">￥{$vo['apply_price']}</td>
+                                            <td style="">￥{$vo['send_price']}</td>
+                                            <td style="">￥{$vo['refund_price']}</td>
+
+                                            <td style="">{$vo['create_time']|mydate}</td>
+                                            <td style="">{$vo['afterStatus']['msg']}</td>
+                                            <td style="">{$vo['status']|forbidenStatus}</td>
+                                            <td style="">
+
+                                                <a class="btn btn-success btn-xs" href="{:url('check_details',array('id'=>$vo['id']))}">{if condition="$vo['chuli_status'] gt 1"}详情{else/}审核{/if}</a>
+
+                                                {if condition="$vo['apply_type'] eq 1 and $vo['chuli_status'] eq 2"}
+                                                <a class="btn btn-danger btn-xs" onclick="btn_dakuan('{$vo[\'id\']}','{$vo[\'tkorder_number\']}')">点击打款</a>
+                                                {elseif condition="$vo['apply_type'] eq 2 and $vo['chuli_status'] eq 4" /}
+                                                <a class="btn btn-danger btn-xs" onclick="btn_dakuan('{$vo[\'id\']}','{$vo[\'tkorder_number\']}')" >点击打款</a>
+                                                {/if}
+
+
+
+
+
+                                        </tr>
+                                        {/volist}
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="fixed-table-pagination" style="display: block;">
+                                    <div class="pull-left pagination-detail">
+                                        <span class="pagination-info">总共 {$list->total()} 条记录</span>
+                                    </div>
+                                    <div class="pull-right pagination">
+                                        {$list->render()}
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<link rel="stylesheet" href="/static/home/layui/css/layui.css">
+<script src="/static/home/layui/layui.all.js" charset="utf-8"></script>
+<script>
+    var $table = $('#builder-table');
+
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //国际版
+        laydate.render({
+            elem: '#dates'
+            ,range: '/'
+        });
+    });
+
+    //点击打款
+    function btn_dakuan(id,order_number) {
+
+        layer.confirm('确定退款吗？', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            $.post("{:url('check_send_price')}",{tkorder_number:order_number,buyafter_id:id},function (dd) {
+                if(dd.code==200){
+                    common_b(id,order_number);
+                }else if(dd.code==202){
+                    layer.confirm(dd.msg+'，继续退款吗？', {
+                        btn: ['继续退款','取消退款'] //按钮
+                    },function () {
+                        common_b(id,order_number);
+                    })
+                }else{
+                    layer.msg(dd.msg,{icon: 2});
+                }
+            })
+        });
+    }
+
+
+    /**
+     *打款
+     * */
+    function common_b(id,order_number) {
+        var index_b = layer.load(1, {
+            shade: [0.4,'#000'] //0.1透明度的白色背景
+        });
+        $.post("{:url('refund_kuan')}",{tkorder_number:order_number,buyafter_id:id},function (dt) {
+            layer.close(index_b);
+            if(dt.code==200){
+                layer.msg(dt.msg,{icon: 1,time:1500});
+                setTimeout(function () {
+                    window.location.reload();
+                },1500)
+            }else{
+                layer.msg(dt.msg,{icon: 2});
+            }
+        });
+    }
+
+
+</script>
+
+{/block}

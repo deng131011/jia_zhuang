@@ -1,0 +1,133 @@
+{include file="public/document_header" /}
+{block name="style"}
+<style>
+    .btn-xs{margin-bottom: 5px;}
+</style>
+{/block}
+
+{block name="main"}
+<link rel="stylesheet" href="/static/libs/bootstrap-table/bootstrap-table.min.css">
+
+<!----- 搜索 ----->
+<section class="row-content pt-5">
+    <div class=" box-default">
+
+        <form id="search_form" action="" method="get">
+            <div class="box-body" id="eacoo-toolbar">
+                <div class="form-inline" role="form">
+
+                    <div class="form-group mt-10">
+                        <input type="text"  class="form-control" name="keywords" value="" placeholder="输入商家名称" style="width:98%;float: left;margin-right:5px;" />
+                    </div>
+
+                    <div class="form-group mt-10">
+                        <button type="button" class="btn btn-success search-btn" id="search">查询</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="content pt-5">
+    <div class="box-body" style="background: #fff;">
+        <div class="builder listbuilder-box">
+            <!-- 顶部工具栏按钮 -->
+            <!-- 数据列表 -->
+            <div class="builder-container">
+                <div class="row">
+
+                    <div class="builder-table col-sm-12">
+                        <div class="bootstrap-table">
+
+
+                                <div class="fixed-table-container fixed_table_list" style="padding-bottom: 0px;">
+                                    <div class="fixed-table-header" ></div>
+                                    <form id="form_5">
+                                    <table id="builder-table" class="table table-responsive table-bordered table-hover dataTable" data-pagination="true" data-toolbar="#builder-toolbar" data-query-params="queryParams" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th class="bs-checkbox checkbox-toggle" style="width:5%;" data-field="state">
+                                               <!-- <input name="btSelectAll" class="btSelectAll" type="checkbox" >-->
+                                                <div class="fht-cell"></div>
+                                            </th>
+                                            <th style="width:5%;">
+                                                <div class="th-inner sortable">ID号</div>
+                                            </th>
+                                            <th style="width:10%;">
+                                                <div class="th-inner sortable">商家名称</div>
+                                            </th>
+                                            <th style="width:10%;" >
+                                                <div class="th-inner sortable">缩略图</div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody id="list_main">
+
+                                        {$str}
+
+                                        </tbody>
+
+                                    </table>
+                                    </form>
+                                    <div class="form-group mt-20">
+                                        <button type="button" class="btn btn-success search-btn" id="btn_add" style="width:30%;">确 定</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="__LIBS__/layer/layer.js"></script>
+<script type="text/javascript">
+    //搜索
+   $("#search").click(function () {
+       $.post("{:url()}",$("#search_form").serialize(),function (dd) {
+           if(dd.code==200){
+               $("#list_main").html(dd.data);
+           }else{
+               layer.msg(dd.msg);
+           }
+       })
+   });
+    //全选
+    $(".content").on('click','.btSelectAll',function () {
+        if($(this).prop("checked")==true){
+            $("#list_main").find('input[name="ids[]"]').prop('checked',true);
+        }else {
+            $("#list_main").find('input[name="ids[]"]').prop('checked',false);
+        }
+    })
+
+    //点击添加
+    var index = parent.layer.getFrameIndex(window.name); //获取当前窗体索引
+    $("#btn_add").click(function () {
+        var ids = '';
+        $("input[name='ids[]']:checked").each(function (i) {
+            if(0==i){
+                ids = $(this).val();
+            }else{
+                ids += (","+$(this).val());
+            }
+        });
+        var old_ids = $("#course_title",window.parent.document).val();
+        if($.trim(old_ids)!=''){
+            ids = old_ids+','+ids;
+        }
+        $("#course_title",window.parent.document).val(ids);//子窗口给父窗口元素赋值
+        $("#check_course_id",window.parent.document).val(ids);//子窗口给父窗口元素赋值
+        parent.layer.close(index);
+    });
+
+</script>
+
+{/block}

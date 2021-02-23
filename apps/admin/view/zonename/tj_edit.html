@@ -1,0 +1,124 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<style type="text/css">
+    .layui-upload-file{
+        display: none !important;
+    }
+    .kinds-select .select2{
+        margin-right: 10px!important;
+    }
+
+
+</style>
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+            <div class="cf eacoo-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="tab_list active"><a href="javascript:;">基本信息</a></li>
+                </ul>
+
+            </div>
+
+
+            <div class="builder formbuilder-box panel-body bg-color-fff">
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <form action="" method="post" class="form-builder form-horizontal">
+                            <fieldset>
+                                <input type="hidden" name="id" value="{$info.id}">
+                                <input type="hidden" name="shop_id" value="{$shop_id}">
+
+                                <div class="tab_content">
+                                    <div class="form-group item_title ">
+                                        <label for="title" class="col-md-2 control-label">所属商家</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" value="{$shop_id|modelField='shop','title'}" readonly />
+                                        </div>
+                                    </div>
+                                    <div class="form-group item_title ">
+                                        <label for="title" class="col-md-2 control-label">标题</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="title" value="{$info.title|default=''}"></div>
+                                        <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i>必须填写</div>
+                                    </div>
+
+
+                                    <!--店铺图片-->
+                                    <div class="form-group item_void_icon ">
+                                        <label for="icon" class="col-md-2 control-label">缩略图</label>
+                                        <div class="col-md-6" style="padding-bottom: 5px;padding-left: 5px;">
+                                            <div class="controls" style="padding-bottom: 5px;padding-left: 5px;">
+                                                <input class="attach" type="hidden" id="icon" name="icon" value="{$info.icon|default=''}"/>
+                                                <div>
+                                                    <span class="btn btn-info ml-10 mt-10 btn-sm" data-url="/admin.php?s=/admin/upload/attachmentlayer/input_id_name/icon/path_type/picture/gettype/single.html" onclick="openAttachmentLayer(this);"><i class="fa fa-file-image-o"></i> 选择图片</span>
+                                                </div>
+                                                <div class="upload-img-box tc popup-gallery fl img-thumbnail pr ">
+                                                    <div class="each">
+                                                        {notempty name="$info['icon']"}
+                                                        <img src="{php}echo get_image($info['icon']);{/php}">
+                                                        {else/}
+                                                        <img src="/static/assets/img/noimage.gif">
+                                                        {/notempty}
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 col-md-offset-2">
+                                        <div class="col-md-3"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                        <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                                    </div>
+                                </div>
+
+
+
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script>
+
+    $('.tab_list').click(function () {
+        var index = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.tab_content').eq(index).show().siblings('.tab_content').hide();
+    });
+
+    //获取经纬度
+    function get_lnglat(){
+        var start_addr = $("input[name='address']").val();
+        if($.trim(start_addr)==''){
+            layer.msg('请正确填写详细地址'); return false;
+        }
+        $.post('{:url("China/get_lng_lat")}',{start_addr:start_addr},function(dd){
+            if(dd.code==200){
+                $("#lng_lat").val(dd.data);
+            }else{
+                layer.alert(dd.msg);
+            }
+        })
+
+    }
+</script>
+
+
+
+
+{/block}

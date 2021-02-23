@@ -1,0 +1,23 @@
+
+
+<div class="col-md-6" style="padding-bottom: 5px;padding-left: 5px;">
+	<div class="controls" style="padding-bottom: 5px;padding-left: 5px;">
+		<input class="attach" type="hidden" id="icon" name="icon" value="{$info.icon|default=''}"/>
+		<div>
+			<span class="btn btn-info ml-10 mt-10 btn-sm" data-url="{:url('admin/Upload/attachmentLayer',['input_id_name'=>'icon','path_type'=>'picture','gettype'=>'single'])}" onclick="openAttachmentLayer(this);"><i class="fa fa-file-image-o"></i> 选择图片</span>
+		</div>
+		<div class="upload-img-box tc popup-gallery fl img-thumbnail pr ">
+			<div class="each">
+				{empty name="info['icon']"}
+				<img src="{php} echo get_image(0);{/php}">
+				{else /}
+				<i onclick="admin_image.removeImage($(this),'{$info["icon"]}')" class="fa fa-times-circle remove-attachment"></i>
+				<a href="{$info['icon']|get_image}" target="_blank" title="点击查看大图">
+					<img src="{$info['icon']|get_image}">
+				</a>
+				{/empty}
+			</div>
+		</div>
+		<div class="help-block col-md-6 pl-10 fn" id="description"></div>
+	</div>
+</div>

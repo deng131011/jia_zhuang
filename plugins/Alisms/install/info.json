@@ -1,0 +1,16 @@
+{
+	"name":"Alisms",
+	"title":"阿里短信SMS",
+	"description":"通过阿里短信接口发送短信，官网：https://www.aliyun.com/product/sms",
+	"author":"心云间、凝听",
+	"admin_manage_into":"",
+	"version":"1.0.0",
+	"dependences":{
+		"plugins":{
+
+		},
+		"modules":{
+
+		}
+	}
+}

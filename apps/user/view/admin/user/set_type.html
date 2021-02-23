@@ -1,0 +1,330 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+<style type="text/css">
+    .layui-upload-file {
+        display: none !important;
+    }
+
+    .circle_list {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .circle_list .circle-head {
+        height: 34px;
+        line-height: 34px;
+        width: 200px;
+        text-align: right;
+        font-size: 13px;
+        font-weight: bold;
+        color: #616161;
+        margin-right: 20px;
+    }
+
+    .circle_list .list-circle {
+        width: calc(100% - 230px);
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .circle_list .list-circle .select2 {
+        width: 200px;
+        height: 34px;
+        margin-right: 20px;
+    }
+
+    .circle_list .list-circle .add_circle {
+        width: 70px;
+        height: 34px;
+        border: none;
+        border-radius: 3px;
+        text-align: center;
+        line-height: 34px;
+        cursor: pointer;
+        background: #3c8dbc;
+        color: #fff;
+    }
+
+    .circle_list .list-circle ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .circle_list .list-circle li {
+        padding-left: 10px;
+        padding-right: 28px;
+        position: relative;
+        border: 1px #c2c2c2 solid;
+        border-radius: 3px;
+        line-height: 34px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .circle_list .list-circle li .fa-remove {
+        position: absolute;
+        right: 5px;
+        top: 7px;
+        background: #d43f3a;
+        border-radius: 3px;
+        color: #fff;
+        padding: 3px;
+        cursor: pointer;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow,
+    .select2-container .select2-selection--single {
+        height: 34px;
+    }
+
+    .tp-title {
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .tp-title input[type='text'] {
+        display: block;
+        width: calc(100% - 60px);
+        height: 30px;
+    }
+
+    .tp-item {
+    }
+
+    .tp-item ul li {
+        display: flex;
+        margin-top: 15px;
+        padding: 5px 0;
+        margin-right: 0 !important;
+    }
+
+    .tp-item ul li .item-info {
+        display: flex;
+        margin-right: 15px;
+    }
+
+    .tp-item ul li .item-info img {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .tp-item ul li .item-info .textarea textarea {
+        display: block;
+        width: 300px;
+        height: 100px;
+        resize: none;
+    }
+
+    .tp-title .title,
+    .tp-item .item-li {
+        width: 60px;
+        line-height: 30px;
+    }
+
+    .action {
+    }
+
+    .action .add_circle {
+        margin-bottom: 10px;
+    }
+
+    .chooseRadio {
+        display: flex;
+        height: 30px;
+        align-items: center;
+    }
+
+    .chooseRadio .radioDiv {
+        margin-right: 20px;
+        padding-left: 20px;
+        position: relative;
+        height: 25px;
+        line-height: 25px;
+        cursor: pointer;
+    }
+
+    .chooseRadio .radioDiv:before {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 1px #ddd solid;
+        left: 0;
+        top: 5px;
+    }
+
+    .chooseRadio .radioDiv:after {
+        position: absolute;
+        display: none;
+        content: '';
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        left: 4px;
+        top: 9px;
+        background: #00a0e9;
+        z-index: 2;
+    }
+
+    .chooseRadio .radioDiv.on:after {
+        display: block;
+    }
+
+</style>
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+            <div class="cf eacoo-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="tab_list active"><a href="javascript:;">基本信息</a></li>
+                </ul>
+
+            </div>
+
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">
+                <div class="col-md-11">
+                  <form action="" method="post" class="form-builder form-horizontal">
+                    <fieldset>
+                      <input type="hidden" name="uid" value="{$info.uid}">
+                        <div class="tab_content">
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">用户身份：</label>
+                                <div class="col-md-2">
+
+                                        <select class="form-control" name="user_type">
+                                            <option value="">请选择</option>
+                                            <option value="2" <?php if($info['user_type']==2){echo 'selected';} ?>>大客户</option>
+                                            <option value="3" <?php if($info['user_type']==3){echo 'selected';} ?>>代理商</option>
+                                        </select>
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择，<font style="color:red;">不要随意更改</font></div>
+                            </div>
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">姓名：</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="username" placeholder="姓名" value="{$info.username|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必填</div>
+                            </div>
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">公司名称：</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" name="company" placeholder="公司名称" value="{$info.company|default=''}" >
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必填</div>
+                            </div>
+
+
+                        <!--选择城市-->
+
+                            <div class="form-group item_title">
+                                <label class="col-md-2 control-label">选择省市区：</label>
+                                <div class="col-md-4">
+                                    <div class="col-md-2" style="width:150px;padding-left:0;">
+                                        <select class="form-control" name="province_id" id="province_id">
+                                            <option value="">省</option>
+                                            {volist name="province" id="pro"}
+                                            <option value="{$pro['id']}" {if condition="!empty($info['province_id']) and $info['province_id'] eq $pro['id']"}selected{/if}>{$pro['title']}</option>
+                                            {/volist}
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-2" style="width:150px;padding-left:0;">
+                                        <select class="form-control" name="city_id" id="city_id">
+                                            <option value="">市</option>
+                                            {volist name="city_list" id="cit"}
+                                            <option value="{$cit['id']}" <?php if($info['city_id']==$cit['id']){echo 'selected';} ?>>{$cit['title']}</option>
+                                            {/volist}
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-2" style="width:150px;padding-left:0;">
+                                        <select class="form-control" name="county_id" id="county_id">
+                                            <option value="">区县</option>
+
+                                            {volist name="county_list" id="ty"}
+                                            <option value="{$ty['id']}" <?php if($info['county_id']==$ty['id']){echo 'selected';} ?>>{$ty['title']}</option>
+                                            {/volist}
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必须选择</div>
+                            </div>
+
+
+
+                        <!--选择城市-->
+                        <div class="form-group item_title">
+                            <label class="col-md-2 control-label">详细地址：</label>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" name="address" placeholder="详细地址" value="{$info.address|default=''}" >
+                            </div>
+                            <div class="col-md-5 help-block"><i class="fa fa-info-circle color-info1"></i> 必填</div>
+                        </div>
+
+
+							
+
+
+
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-md-offset-2">
+                                <div class="col-md-2"><button class="btn btn-block btn-primary submit ajax-post" type="submit" target-form="form-builder">确定</button></div>
+                                <div class="col-md-2"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                            </div>
+                        </div>
+
+
+                         </fieldset>
+                  </form>
+
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script src="__ADMIN_JS__/zone_select.js"></script>
+<script>
+$('select[name="position_id"]').change(function () {
+    var size = $(this).find('option:selected').attr('data-size');
+
+    if(size!=''){
+        $("#description").text('图片尺寸'+size);
+    }
+});
+
+
+$('.tab_list').click(function () {
+    var index = $(this).index();
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.tab_content').eq(index).show().siblings('.tab_content').hide();
+});
+
+
+
+</script>
+
+
+
+
+{/block}

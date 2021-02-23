@@ -1,0 +1,107 @@
+{extend name="$_admin_public_base_"/}
+{block name="style"}{/block}
+
+{block name="main"}
+
+<style>
+    table{width:100%;}
+    tr{height:50px;}
+    td,th{padding:0 5px;}
+    .form-item1 td{text-indent: 20px; font-size: 16px;}
+    .product_table td{text-align: center;}
+    .product_table .img1 img{width:50px; height: 50px; border:1px solid #e4dfdf; margin-top:5px;}
+    .item-label2{text-align: right; margin-bottom: 10px;}
+    .item-label2 span{margin-right: 10px;}
+    .hhh{float: left; margin-right: 10px;}
+    .other_price{height:50px; line-height: 50px;}
+    .other_price .right{float: right; width:20%;}
+    .other_price span{font-size: 16px; color: red;}
+    .other_price .span1{text-align: right; float: left; display: block;width: 50%;}
+</style>
+<section class="content pt-5">
+    <div class="box box-solid eacoo-box">
+        <div class="box-body">
+
+        <div class="builder formbuilder-box panel-body bg-color-fff">
+
+            <div class="row">    
+
+                <div class="col-md-11">
+
+                    <fieldset>
+
+                      <input type="hidden" name="id" value="{$info.id}">
+
+					    <div class="form-group item_title">
+                            <label class="item-label">基本信息：</label>
+                            <table border="1" cellspacing="0" cellpadding="0" border-color="#e0e0e0" style="border-collapse:collapse; border:1px solid #e0e0e0;">
+                                <tr>
+                                    <td width="10%" >核销码：{$info.hexiao_code}</td>
+                                    <td width="10%">下单时间：{$info.create_time|mydate}</td>
+                                    <td width="10%">核销状态：{$info['orderstatus']['msg']}</td>
+                                    <td width="10%">核销时间：{if condition="$info['hexiao_status'] eq 1" }{$info.hexiao_time|mydate} {else/} -- {/if}</td>
+                                </tr>
+                                <tr>
+                                    <td width="10%">下单用户：{$info['order_user']|default=$info['username']}</td>
+                                    <td width="10%">联系电话：{$info['order_mobile']|default=$info['mobile']}</td>
+                                    <td width="10%">预约时间：{$info.order_date|default=''}</td>
+                                    <td width="10%">人数：{$info.person_num|default=''}</td>
+                                </tr>
+
+                                <tr>
+                                    <td width="10%">原价：{$info['total_price']|default=''}</td>
+                                    <td width="10%">折扣：{$info['zhe_kou']|default=''}</td>
+                                    <td width="10%">折后价：{$info['zhe_kou_price']|default=''}</td>
+                                    <td width="10%">实际支付：{$info.pay_price|default=''}</td>
+                                </tr>
+
+                                <tr>
+                                    <td width="10%" colspan="2">商家：{$info['shop_id']|modelField='shop','title'}</td>
+                                    <td width="10%" colspan="2">备注：{$info['remark']}</td>
+                                </tr>
+                            </table>
+					    </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 col-md-offset-2" style="margin-left: 0 !important;">
+                                <div class="col-md-3"><button class="btn btn-block btn-default return" onclick="javascript:history.back(-1);return false;">返回</button></div>
+                            </div>
+                        </div>
+                      </fieldset>
+                </div>    
+           </div>
+         </div>
+        </div>
+    </div>
+</section>
+{/block}
+{block name="script"}
+<script>
+   //更改发货状态
+   $("#btn_order_status").click(function () {
+       var $this = $(this);
+       parent.layer.confirm('您确定选择该班级吗?', {offset: 't',icon: 3, title:'询问',shadeClose: true,shade: 0.5,}, function(e){
+           parent.layer.close(e);
+           $.post("{:url('changStatus')}",$("#form2").serialize(),function (result) {
+               handleAjax(result,$this);
+           });
+       }, function(e){
+           parent.layer.close(e);
+       });
+   });
+
+   //获取班级
+    $('select[name="teacher_id"]').change(function () {
+        var teacher_id = $(this).val();
+        $.post("{:url('get_class')}",{teacher_id:teacher_id},function (dd) {
+            if(dd.code==200){
+                $("#class_main").html('<option value="">请选择班级 </option>'+dd.html);
+            }else{
+                layer.msg(dd.msg);
+            }
+        })
+    });
+</script>
+
+{/block}
