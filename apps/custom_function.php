@@ -470,3 +470,14 @@ function product_price($ve,$userinfo){
     }
     return $new_price;
 }
+
+//秒杀状态
+function spike_status($ve=array()){
+    if(strtotime($ve['start_time'])>time()){
+        return '未开始';
+    }else if(strtotime($ve['start_time'])<=time() && strtotime($ve['end_time'])>time()){
+        return '<font style="color: red;">进行中</font>';
+    }else if(strtotime($ve['end_time'])<=time()){
+        return '已结束';
+    }
+}

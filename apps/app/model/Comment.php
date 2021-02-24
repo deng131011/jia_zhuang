@@ -10,10 +10,12 @@ class Comment extends Model {
 
     /**
      *添加单个评价
-     * type:1商品  2课程，3直播，4题库
+     * type:1商品
      **/
     public function add_one_comment($post){
-
+        if(empty($post['uid']) || empty($post['type']) || empty($post['return_id']) || empty($post['content'])){
+            return array('code'=>201,'msg'=>'网络错误，请稍后再试！');
+        }
         Db::startTrans();
         try{
             $data['uid']            = $post['uid'];
@@ -22,7 +24,7 @@ class Comment extends Model {
             $data['content']        = $post['content'];
             $data['imgarr']         = !empty($post['imgarr']) ? $post['imgarr'] : '';
             $data['order_id']       = !empty($post['order_id']) ? $post['order_id'] : 0;
-            $data['good_type']      = !empty($post['good_type']) ? $post['good_type'] : 1;
+            $data['star']           = !empty($post['star']) ? $post['star'] : 1;
             $data['create_time']    = time();
             $res = db('comment')->insertGetId($data);
 
@@ -39,7 +41,6 @@ class Comment extends Model {
                 if (empty($vos)) {
                     db('order')->where('id', $post['order_id'])->update(['order_status' => 3]);
                 }
-
             }
             Db::commit();
             $result['comment_id'] = $res;

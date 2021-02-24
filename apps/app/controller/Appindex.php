@@ -3,6 +3,7 @@
 namespace app\app\controller;
 
 use think\Cache;
+use think\cache\driver\Redis;
 use think\Db;
 use think\Session;
 
@@ -67,6 +68,12 @@ class Appindex extends Home {
 
 
 
+    public function test(){
+        $redis = new \Redis();
+        $redis->connect('127.0.0.1','6379');
+        //$redis->set('jia_zhuang_stringa','邓松');
+        p($redis->get('jia_zhuang_stringa'));
+    }
 
 
 

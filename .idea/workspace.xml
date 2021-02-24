@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/apps/app/controller/Comment.php" line="16" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="d01ff474-5fec-4ec3-95f5-1de3c839631a" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -42,16 +39,16 @@
         <entry file="file://$PROJECT_DIR$/apps/app/controller/Payup.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="222">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Payup.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Payup.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/app/model/Payup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
+            <state relative-caret-position="442">
+              <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
               <folding>
                 <element signature="e#32#45#0#PHP" expanded="true" />
                 <element signature="e#1264#2634#0#PHP" />
@@ -61,11 +58,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/app/controller/Comment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/app/model/Comment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="common.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/common.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="67">
-              <caret line="396" lean-forward="true" selection-start-line="396" selection-end-line="396" />
+              <caret line="396" selection-start-line="396" selection-end-line="396" />
             </state>
           </provider>
         </entry>
@@ -73,35 +88,52 @@
       <file leaf-file-name="custom_function.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/custom_function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3916">
-              <caret line="89" column="3" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
+            <state relative-caret-position="310">
+              <caret line="409" column="15" lean-forward="true" selection-start-line="409" selection-start-column="15" selection-end-line="409" selection-end-column="15" />
+              <folding>
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Member.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/app/model/Member.php">
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/admin/view/spike/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="292" selection-start-line="292" selection-end-line="292" />
+            <state relative-caret-position="2994">
+              <caret line="96" column="38" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Account.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/app/model/Account.php">
+      <file leaf-file-name="Spike.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/admin/controller/Spike.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4136">
-              <caret line="98" column="50" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
+            <state relative-caret-position="-660">
+              <caret line="78" column="63" selection-start-line="78" selection-start-column="63" selection-end-line="78" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Member.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/app/controller/Member.php">
+      <file leaf-file-name="Appindex.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/app/controller/Appindex.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8096">
-              <caret line="185" column="28" selection-start-line="185" selection-start-column="28" selection-end-line="185" selection-end-column="28" />
+            <state relative-caret-position="308">
+              <caret line="71" column="30" lean-forward="true" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -151,11 +183,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/apps/admin/controller/Buyafter.php" />
-        <option value="$PROJECT_DIR$/apps/app/model/Buyafter.php" />
         <option value="$PROJECT_DIR$/apps/admin/model/Buyafter.php" />
         <option value="$PROJECT_DIR$/apps/app/model/Myorder.php" />
-        <option value="$PROJECT_DIR$/apps/app/controller/Comment.php" />
         <option value="$PROJECT_DIR$/apps/admin/model/Liveroom.php" />
         <option value="$PROJECT_DIR$/apps/admin/view/liveroom/index.html" />
         <option value="$PROJECT_DIR$/apps/admin/view/liveroom/edit.html" />
@@ -174,7 +203,6 @@
         <option value="$PROJECT_DIR$/apps/admin/view/product/index.html" />
         <option value="$PROJECT_DIR$/apps/admin/controller/Producttype.php" />
         <option value="$PROJECT_DIR$/apps/admin/view/login/index.html" />
-        <option value="$PROJECT_DIR$/apps/app/controller/Appindex.php" />
         <option value="$PROJECT_DIR$/apps/app/model/Appindex.php" />
         <option value="$PROJECT_DIR$/apps/app/controller/Product.php" />
         <option value="$PROJECT_DIR$/apps/admin/model/Product.php" />
@@ -193,8 +221,6 @@
         <option value="$PROJECT_DIR$/apps/admin/controller/Ajax.php" />
         <option value="$PROJECT_DIR$/apps/user/admin/User.php" />
         <option value="$PROJECT_DIR$/apps/user/view/admin/user/set_type.html" />
-        <option value="$PROJECT_DIR$/apps/app/model/Comment.php" />
-        <option value="$PROJECT_DIR$/apps/custom_function.php" />
         <option value="$PROJECT_DIR$/common.php" />
         <option value="$PROJECT_DIR$/apps/app/controller/Notify.php" />
         <option value="$PROJECT_DIR$/apps/app/controller/Member.php" />
@@ -202,6 +228,12 @@
         <option value="$PROJECT_DIR$/apps/app/controller/Payup.php" />
         <option value="$PROJECT_DIR$/apps/common.php" />
         <option value="$PROJECT_DIR$/apps/app/model/Payup.php" />
+        <option value="$PROJECT_DIR$/apps/app/controller/Comment.php" />
+        <option value="$PROJECT_DIR$/apps/app/model/Comment.php" />
+        <option value="$PROJECT_DIR$/apps/custom_function.php" />
+        <option value="$PROJECT_DIR$/apps/admin/view/spike/edit.html" />
+        <option value="$PROJECT_DIR$/apps/admin/controller/Spike.php" />
+        <option value="$PROJECT_DIR$/apps/app/controller/Appindex.php" />
       </list>
     </option>
   </component>
@@ -266,7 +298,7 @@
       <path value="$PROJECT_DIR$/vendor/topthink/think-angular" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="8" />
     <option name="width" value="1696" />
@@ -318,6 +350,14 @@
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jia_zhuang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jia_zhuang" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="spike" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jia_zhuang" type="b2602c69:ProjectViewProjectNode" />
@@ -904,15 +944,15 @@
       <workItem from="1613990017547" duration="3697000" />
       <workItem from="1614042451536" duration="2270000" />
       <workItem from="1614075739846" duration="3369000" />
-      <workItem from="1614129648618" duration="2101000" />
+      <workItem from="1614129648618" duration="6802000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2234774000" />
+    <option name="totallyTimeSpent" value="2239475000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17542787" />
@@ -956,23 +996,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apps/admin/view/public/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admin/view/public/base.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin/controller/Liveroom.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -984,13 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="134" column="57" selection-start-line="134" selection-start-column="57" selection-end-line="134" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/app/controller/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1081,13 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/app/controller/Appindex.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin/model/Orders.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1161,13 +1170,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/app/model/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="98" column="61" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/app/model/Appindex.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1228,13 +1230,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/common.php" />
-    <entry file="file://$PROJECT_DIR$/apps/custom_function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3916">
-          <caret line="89" column="3" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/app/controller/Notify.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4092">
@@ -1273,7 +1268,7 @@
     <entry file="file://$PROJECT_DIR$/apps/app/controller/Payup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -1287,19 +1282,85 @@
     <entry file="file://$PROJECT_DIR$/apps/common.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
-          <caret line="396" lean-forward="true" selection-start-line="396" selection-end-line="396" />
+          <caret line="396" selection-start-line="396" selection-end-line="396" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/app/model/Payup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
+        <state relative-caret-position="442">
+          <caret line="128" column="36" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
           <folding>
             <element signature="e#32#45#0#PHP" expanded="true" />
             <element signature="e#1264#2634#0#PHP" />
             <element signature="e#2694#3784#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/app/controller/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/app/model/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/custom_function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="409" column="15" lean-forward="true" selection-start-line="409" selection-start-column="15" selection-end-line="409" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/view/spike/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2994">
+          <caret line="96" column="38" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/controller/Spike.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-660">
+          <caret line="78" column="63" selection-start-line="78" selection-start-column="63" selection-end-line="78" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/redis/Redis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4312">
+          <caret line="98" column="20" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/app/controller/Appindex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="71" column="30" lean-forward="true" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
         </state>
       </provider>
     </entry>

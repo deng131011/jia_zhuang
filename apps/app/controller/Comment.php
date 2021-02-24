@@ -14,9 +14,7 @@ class Comment extends Home {
      **/
     public function add_one_comment(){
         $post = $this->post;
-        if(empty($post['uid']) || empty($post['type']) || empty($post['return_id']) || empty($post['content'])){
-            $this->appReturn(array('code'=>201,'msg'=>'网络错误，请稍后再试！'));
-        }
+
         $result = model('Comment')->add_one_comment($post);
         $this->appReturn($result);
     }
