@@ -29,5 +29,15 @@ class Payup extends Home {
 
 
 
+    /**
+     *余额明细
+     **/
+    public function flowater(){
+        $post = $this->post;
+        $result = model('Payup')->flowater($post);
+        $this->appReturn($result);
+    }
+
+
 
 }

@@ -112,6 +112,28 @@ class Payup extends Model {
 
 
 
+    /**
+     *余额明细
+     **/
+    public function flowater($post){
+        if(empty($post['uid']) || empty($post['token'])){
+            return array('code'=>201,'msg'=>'网络错误，请稍后再试');
+        }
+
+        $where['f.uid'] = array('eq',$post['uid']);
+        $where['f.pt_type'] = array('eq',1);
+
+        $page = $post['page']>0 ? $post['page'] : 1;
+        $num = 20;
+        $list = db('flowater f')->join('usermember u','f.uid = u.id')->field('f.*')->where($where)->page($page,$num)->select();
+        foreach ($list as $ke=>$ve){
+            $list[$ke]['type_title'] = price_flowater_zftype($ve['zf_type']);
+            $list[$ke]['create_time'] = mydate($ve['create_time'],2);
+        }
+
+        return array('code'=>200,'msg'=>'成功','data'=>$list);
+    }
+
 
 
 }

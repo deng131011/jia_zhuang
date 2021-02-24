@@ -1,0 +1,135 @@
+---------------------------------------------------------------
+[ 2021-02-24T09:55:11+08:00 ] 192.168.16.191 POST 192.168.16.191:821/app/Payup/flowater
+[运行时间：0.297017s] [吞吐率：3.37req/s] [内存消耗：2,930.61kb] [文件加载：73]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.049003s ]
+[ info ] [ LANG ] G:\phpstudy\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Payup',
+    2 => 'flowater',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_7b1919221e89d2aa5711e4deb935debd=1603268639',
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '61',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.16.191:821',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.140008s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.002000s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003001s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.029001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_themes` [ RunTime:0.028002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_themes` WHERE  `current` = 2 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.028002s ]
+[ sql ] [ SQL ] SELECT `name`,`value`,`type` FROM `qyc_config` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `name`,`config` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks` [ RunTime:0.027002s ]
+[ sql ] [ SQL ] SELECT `id` FROM `qyc_hooks` WHERE  `name` = 'FormBuilderExtend' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_hooks_extra` [ RunTime:0.026001s ]
+[ sql ] [ SQL ] SELECT `depend_flag` FROM `qyc_hooks_extra` WHERE  `hook_id` = 2  AND `depend_type` = 2 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.026002s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2021-02-24T09:55:20+08:00 ] 192.168.16.191 POST 192.168.16.191:821/app/Payup/flowater
+[运行时间：0.154009s] [吞吐率：6.49req/s] [内存消耗：2,902.03kb] [文件加载：72]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.041002s ]
+[ info ] [ LANG ] G:\phpstudy\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Payup',
+    2 => 'flowater',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_7b1919221e89d2aa5711e4deb935debd=1603268639',
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '61',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.16.191:821',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.030002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Payup->flowater[ G:\phpstudy\www\jia_zhuang\apps\app\controller\Payup.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010001s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_flowater` [ RunTime:0.022001s ]
+[ sql ] [ SQL ] SELECT `f`.* FROM qyc_flowater f INNER JOIN `qyc_usermember` `u` ON `f`.`uid`=`u`.`id` WHERE  `f`.`uid` = 1  AND `f`.`pt_type` = 1 LIMIT 0,20 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2021-02-24T09:56:03+08:00 ] 192.168.16.191 POST 192.168.16.191:821/app/Payup/flowater
+[运行时间：0.159009s] [吞吐率：6.29req/s] [内存消耗：2,902.53kb] [文件加载：72]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitApp @app_init [ RunTime:0.043003s ]
+[ info ] [ LANG ] G:\phpstudy\www\jia_zhuang\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'app',
+    1 => 'Payup',
+    2 => 'flowater',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_7b1919221e89d2aa5711e4deb935debd=1603268639',
+  'connection' => 'close',
+  'origin' => 'null',
+  'content-length' => '61',
+  'content-type' => 'text/plain;charset=UTF-8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:85.0) Gecko/20100101 Firefox/85.0',
+  'host' => '192.168.16.191:821',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Config @app_begin [ RunTime:0.030002s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_begin [ RunTime:0.001000s ]
+[ info ] [ RUN ] app\app\controller\Payup->flowater[ G:\phpstudy\www\jia_zhuang\apps\app\controller\Payup.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:host=127.0.0.1;port=3306;dbname=jia_zhuang;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_modules` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `name` FROM `qyc_modules` WHERE  `status` = 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_config` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT `value` FROM `qyc_config` WHERE  `name` = 'captcha_type' LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_usermember` [ RunTime:0.024002s ]
+[ sql ] [ SQL ] SELECT *,id as uid FROM `qyc_usermember` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `qyc_flowater` [ RunTime:0.023001s ]
+[ sql ] [ SQL ] SELECT `f`.* FROM qyc_flowater f INNER JOIN `qyc_usermember` `u` ON `f`.`uid`=`u`.`id` WHERE  `f`.`uid` = 1  AND `f`.`pt_type` = 1 LIMIT 0,20 [ RunTime:0.000000s ]

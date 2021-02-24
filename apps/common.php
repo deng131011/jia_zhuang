@@ -401,11 +401,13 @@ function price_flowater_zftype($zftype){
     if($zftype==1){
         $msg = ['zf_type'=>1,'title'=>'购买商品','title2'=>'购买商品'];
     }else if($zftype==2){
-        $msg = ['zf_type'=>2,'title'=>'酒店预订','title2'=>'酒店预订'];
+        $msg = ['zf_type'=>2,'title'=>'余额退回','title2'=>'余额退回'];
     }else if($zftype==3){
-        $msg = ['zf_type'=>3,'title'=>'商品退款','title2'=>'商品退款'];
+        $msg = ['zf_type'=>3,'title'=>'退款退回','title2'=>'退款退回'];
     }else if($zftype==4){
-        $msg = ['zf_type'=>4,'title'=>'酒店退款','title2'=>'酒店退款'];
+        $msg = ['zf_type'=>4,'title'=>'余额充值','title2'=>'余额充值'];
+    }else if($zftype==5){
+        $msg = ['zf_type'=>5,'title'=>'提现','title2'=>'提现'];
     }
     return $msg;
 }
